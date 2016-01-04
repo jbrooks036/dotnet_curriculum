@@ -21,7 +21,11 @@
 * https://coursewareofthefuture.herokuapp.com/courses/7/materials/computer-science/databases/introduction-to-sql.md
 
 ### J-16 - Set Theory / Functions (L, CS, Ma)
+* [lecture slides](http://lectures.sophicware.com/set-theory/)
+
 ### J-17 - Basics of Databases/Modeling (L)
+* [lecture slides](http://lectures.sophicware.com/database-basics)
+
 ### J-18 - Learning SQL (L, CS)
 
 ## Assignments / Exercises
