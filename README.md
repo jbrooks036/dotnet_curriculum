@@ -1,31 +1,65 @@
-# dotnet_curriculum
+# Plan for DotNet Curriculum
+Version 0.1  (February 9, 2016)
 
-These materials are assembled for NSS' C#/DotNet back end curriculum.
-The materials are organized in modules, including contributions from Eliza's github repos and Jurnell's Trello Board and Gists (NSS Cohorts 7 and 10).  This is very much a "first pass" at developing the curriculum, and there is a lot more that needs to be done, but I am releasing it now so that everyone can hopefully review it and comment while Eliza is still on board at NSS.
+* Steve Brownlee
+* Jo Ann Brooks
 
-A few notes:  
-* Within most of the high-level folders, there is a markdown file at the top level.  The contents of this file represent an outline of the subtopics that Eliza and Jurnell have identified within the overall module.
 
-* Within these outlines, Eliza's materials are prefixed with "E-" and Jurnell's w/ "J-".  The numbers after these letters correspond to rough order that the instructor presented the materials in, making it easier for me during the organizational process.  The prefix numbers may or may not be useful to anyone else trying to figure out how to order materials.
+## Milestone 0:  Machine Configuration
+#### Install and Setup
+* Virtual machines
+* Windows licenses
+* Visual Studio
+* SQL Server Management Studio
 
-* Folders prefixed w/ "EB" are fully borrowed from Eliza's software-development-curriculum repo.
+## Milestone 1:  Learning C# and Visual Studio
+#### Topics
+* OOP principles
+* Understanding Visual Studio (VS)
+* Basic C#
+* Input/output
+* Testing framework in VS
 
-* I suspect that Jurnell has more written materials somewhere but I have not seen them yet, so stay tuned for those additions.
+#### Exercises
+* Koans (some, limited number)
+  * methods, strings, arrays, inheritance?, lambdas?
+* Simple tests in VS
+* Sorting algorithms?
 
-* There will also be additions from Sonda's notes (Cohort 7's .NET class); it will take a while to get these divvy'ed up and inserted into appropriate modules.
+#### Group Project
+Simple Calculator
 
-* Everything here represents "work in progress" -- please feel to make any additions or corrections, and/or send comments to me or (preferably) to the entire list.  If you want to move things around, that's fine, just please record your reasoning in the commit(s) so I can track what's been happening.  
+## Milestone 2:  MVC Paradigm and Databases
+#### Topics
+* What is a database?
+* Creating ERDs
+* Model
+  * ORM / Entity Framework / Repository
+  * Data Annotations & Regex
+  * Testing (including Mocks)
+  * Patterns
+* View / Controller
+  *	Action Results
+  *	RESTful APIs
+  *	Helper Methods
+  *	UI/UX, Design
+* MVC App (bare bones)
+* User management (ApplicationUser vs. MyAppUser)
+*	Migrations
 
-* Some of Jurnell's sub-topics have codes after them, according to the following key:
-    * AC - Active Coding
-    * Ex - Exercise
-    * GT - Group Think
-    * L - Lecture
-    * PP - Pair Programming
-    * S - Speaker
+#### Exercises
+* ???
 
-    * CS - Computer Science
-    * DP - Design Pattern
-    * Ma - Math
-    * Sec - Security
-    * TDD - Test-Driven Development
+#### Group Project
+Small-scale MVC app with ASP.NET 4.6.
+
+## Milestone 3:  Building an API
+#### Topics (to be fleshed out over time)
+* Web API
+* Routing
+
+#### Exercises
+* ???
+
+#### Group Project
+Small-scale Web API with ASP.NET 4.6.
