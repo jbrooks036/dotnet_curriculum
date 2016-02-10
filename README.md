@@ -23,6 +23,7 @@ Version 0.1  (February 9, 2016)
 #### Exercises
 * Koans (some, limited number)
   * methods, strings, arrays, inheritance?, lambdas?
+* Cheers?
 * Simple tests in VS
 * Sorting algorithms?
 
