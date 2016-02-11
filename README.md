@@ -14,10 +14,9 @@ Version 0.1  (February 9, 2016)
 
 ## Milestone 1:  Learning C# and Visual Studio
 #### Topics
-* OOP principles
 * Understanding Visual Studio (VS)
-* Basic C#
-* Input/output
+* OOP principles
+* Intro to C#
 * Testing framework in VS
 
 #### Exercises
