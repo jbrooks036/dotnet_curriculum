@@ -1,0 +1,54 @@
+# Views and Controllers - Set up
+
+## View/Controller
+In MVC 5, Registration, Login, Password change are already taken care of.  Account and Manage Controllers are built in same with Account and Manage ViewModels.  Account = basic login stuff.  Manage = changing user info, changing password.
+"About" page url:  ./Home/About
+The syntax for the url in this case is:
+*	"Home" = prefix of controller class (by convention), via routes
+*	"About" = controller action, an instance method; returns an "Action Result" that refers to the view that will get data injected, as part of .NET's MVC package.  Works as a regular method for testing and utilities.
+
+Business logic goes in Repository.
+
+## Controllers
+Controller injects data into View.
+Document types include html, json, soap, xml, csv, pdf.
+Most web pages are dynamically generated these days.
+Helper methods - facilities to help develop views.
+Template engines - iterate thorugh list of objects.
+Controller actions are instance methods of _______? class.
+
+Jurnell, when speaking, makes the distinction:
+⦁	"Actions" = instance methods of controller class.
+⦁	"Methods" = http actions (GET, POST, DELETE, etc.)
+Action Results of controller match Views.
+View Bag - for passing data from controller to View.  Works like a dictionary, not a class or property.  One View Bag is unique for each call to a page.  Can be manipulated inside controller, and/or cshtml.
+
+## Views
+Views - named same as controller (again, by convention).
+.cshtml - made up by Microsoft, to embed C# inside html using Razor syntax & engine.
+In .cshtml, "@" delimits C# code and prefixs C# variables.
+Shared .cshtml files (shared by multiple views):
+ _Layout(s)
+ _Partials
+
+Q: Where is view injected into layout?
+A: @RenderBody() helper function ("lazy evaluator") - waits until last minute, when view is thrown at it.
+Action Links - method calls used to create anchor texts.  E.g.
+@Html. ActionLink("Home", "Index", "Home"), where
+*	first "Home" is visible on the page
+*	"Index" is the name of method to be called
+*	second "Home" is prefix of controller.
+
+Attribute = <key, value> pair, with no restrictions on it. e.g. Angular's ng-view; Bootstrap and Foundation each have their own attributes.
+Html built on top of XML - made to be extensible.
+Can embed additional atributes to any tag created.
+Even classes can be dynamic
+@ class does not call C# class, but escapes .css class.
+
+RESTfulAPIs (convention)
+GET Account/User   => returns list of users
+GET Account/User/:id => returns individual id
+
+Typical development process is to work on one model at a time.
+Bundles - provide additional resources to project
+Move NavBar out of shared _Layout, and turn it into a partial.

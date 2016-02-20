@@ -10,7 +10,7 @@
 
 ### 5) Visual Studio Install
 
-### 6) SQL Server Install
+### 6) SQL Server Install [or SQL Server Management Studio?]
 
 ### Open Source Licensing
 
