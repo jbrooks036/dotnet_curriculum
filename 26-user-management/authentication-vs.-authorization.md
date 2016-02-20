@@ -1,6 +1,8 @@
 Authorization vs. Authentication
 ================================
 
+In MVC 5, Registration, Login, Password change are already taken care of.  Account and Manage Controllers are built in same with Account and Manage ViewModels.  Account = basic login stuff.  Manage = changing user info, changing password.
+
 <h2>Authorization:</h2>
   <p>
     Authorization refers to the rules that determine who is allowed to do what.
