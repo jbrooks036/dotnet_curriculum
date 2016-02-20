@@ -39,7 +39,10 @@ Business logic goes in Repository.
    *	second "Home" is prefix of controller.
 
 ## Routing
-* Default MVC "About" page url:  ./Home/About
+* Convention is `{controllerName}/{action}/{:id}`
+* E.g.: Home/User/12   =>   Gets the page of the user with the id of 12
+
+Default MVC "About" page url:  ./Home/About
 * The syntax for the url in this case is:
   *	"Home" = prefix of controller class (by convention), via routes
   *	"About" = controller action, an instance method; returns an "Action Result" that refers to the view that will get data injected, as part of .NET's MVC package.  Works as a regular method for testing and utilities.
@@ -48,8 +51,7 @@ Business logic goes in Repository.
 #### RESTfulAPIs (convention)
 * GET Account/User   => returns list of users
 * GET Account/User/:id => returns individual id
-
-Typical development process is to work on one model at a time.
+  * Typical development process is to work on one model at a time.
 
 Bundles - provide additional resources to project
 Move NavBar out of shared _Layout, and turn it into a partial.

@@ -10,4 +10,4 @@
 ### Drawing Tools
 * Free diagramming tool with easy UI that integrates with google drive (courtesy of dan hodges):
 https://www.draw.io/
-* A designer tool for creating color combinations that work together well (courtesy of ryan tanay): http://paletton.com/  
+* A designer tool for creating color combinations that work together well (courtesy of ryan tanay): http://paletton.com/
