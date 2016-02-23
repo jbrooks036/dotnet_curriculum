@@ -6,7 +6,7 @@
 *	Helper Methods
 *	UI/UX, Design
 
-Business logic goes in Repository.
+N.B. Business logic goes in Repository, not Controller.
 
 ## Controllers
 * A controller handles the flow of information between front end and back end.
@@ -28,9 +28,9 @@ Business logic goes in Repository.
 
 ## Views
 * `View` - named same as controller prefix (built into .NET by convention).
-* `.cshtml` - filetype specific to Microsoft's MVC.
+* `.cshtml` - filetype specific to Microsoft's MVC framework
   * Supports use of embedded C# inside html-syntax files using Razor syntax.
-  * Razor engine then interprets embedded C# into pure html file on the server (before reaching browser).
+  * Razor engine then interprets html with embedded C# into pure html file - this happens on the server, before html reaches browser
   * `@` delimits C# code and prefixes C# variables
  * .cshtml files can be shared by multiple views, e.g.
    * `_Layout`
@@ -38,15 +38,18 @@ Business logic goes in Repository.
 * Q: What is the syntax for injecting a View into layout?
 * A: `@RenderBody()` helper function ("lazy evaluator")
     * Waits until last minute, when view is thrown at it during rendering of `Index`.
-* ActionLink methods - method calls used to create anchor tags (`<href>`).
+
+* `ActionLink` methods - method calls used to create anchor tags (`<href>`).
  * E.g.
 @Html.ActionLink("Home", "Index", "Home"), where:
    *	first "Home" is visible on the page
    *	"Index" is the name of method to be called
-   *	second "Home" is prefix of controller.
+
+   *	second "Home" is prefix of controller
+
 * for more info, see: https://msdn.microsoft.com/en-us/library/system.web.mvc.html.linkextensions.actionlink%28v=vs.118%29.aspx
 
-## Adding Views to Project
+#### Adding Views to Project
 * https://github.com/NashvilleSoftwareSchool/jitter-juniper/commit/7f9e28efd5cd6812b85cc95f5d8bdc15d1ee9ad2
 * https://gist.github.com/lynnsamuelson/8321571192ea0e3d62a1    [Adding Views on Capstone Project.md]
 
