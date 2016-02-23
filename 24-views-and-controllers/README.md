@@ -38,26 +38,15 @@ N.B. Business logic goes in Repository, not Controller.
 * Q: What is the syntax for injecting a View into layout?
 * A: `@RenderBody()` helper function ("lazy evaluator")
     * Waits until last minute, when view is thrown at it during rendering of `Index`.
-<<<<<<< HEAD
-
-=======
->>>>>>> a04eced0f71fa4e169f6da1ed9863646060819d2
 * `ActionLink` methods - method calls used to create anchor tags (`<href>`).
  * E.g.
 @Html.ActionLink("Home", "Index", "Home"), where:
    *	first "Home" is visible on the page
    *	"Index" is the name of method to be called
-<<<<<<< HEAD
-
-   *	second "Home" is prefix of controller
-
-* for more info, see: https://msdn.microsoft.com/en-us/library/system.web.mvc.html.linkextensions.actionlink%28v=vs.118%29.aspx
-
-=======
    *	second "Home" is prefix of controller
 * for more info, see: https://msdn.microsoft.com/en-us/library/system.web.mvc.html.linkextensions.actionlink%28v=vs.118%29.aspx
 
->>>>>>> a04eced0f71fa4e169f6da1ed9863646060819d2
+
 #### Adding Views to Project
 * https://github.com/NashvilleSoftwareSchool/jitter-juniper/commit/7f9e28efd5cd6812b85cc95f5d8bdc15d1ee9ad2
 * https://gist.github.com/lynnsamuelson/8321571192ea0e3d62a1    [Adding Views on Capstone Project.md]
