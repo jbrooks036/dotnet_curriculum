@@ -1,14 +1,12 @@
 # Views and Controllers: Set up
 
-### Views and Controllers
+#### Views and Controllers
 *	Action Results
 *	RESTful APIs
 *	Helper Methods
 *	UI/UX, Design
 
-N.B. Business logic goes in Repository, not Controller.
-
-## Controllers
+### Controllers
 * A controller handles the flow of information between front end and back end.
 * The name of each controller ends in "...Controller", and inherits from .NET `System.Web.Mvc.Controller` class.
 * Each controller method connects a particular request route from a client to a particular response action that the server performs.
@@ -25,8 +23,10 @@ N.B. Business logic goes in Repository, not Controller.
    * Html built on top of XML - made to be extensible. Can embed additional attributes to any tag created.
    * Even classes can be dynamic: `@class` does not call C# class, but escapes .css class.
  * n.b. ViewBag is a dynamic object and therefore has no IntelliSense support; errors will not be discovered during compile, only at runtime
+* Controller will change over time.
+  * Business logic belongs in Repository, not Controller.
 
-## Views
+### Views
 * `View` - named same as controller prefix (built into .NET by convention).
 * `.cshtml` - filetype specific to Microsoft's MVC framework
   * Supports use of embedded C# inside html-syntax files using Razor syntax.
@@ -46,24 +46,29 @@ N.B. Business logic goes in Repository, not Controller.
    *	second "Home" is prefix of controller
 * for more info, see: https://msdn.microsoft.com/en-us/library/system.web.mvc.html.linkextensions.actionlink%28v=vs.118%29.aspx
 
-
 #### Adding Views to Project
 * https://github.com/NashvilleSoftwareSchool/jitter-juniper/commit/7f9e28efd5cd6812b85cc95f5d8bdc15d1ee9ad2
 * https://gist.github.com/lynnsamuelson/8321571192ea0e3d62a1    [Adding Views on Capstone Project.md]
+* Move NavBar out of shared `_Layout`, and turn it into a partial.
+* Bundles - provide additional resources to project
 
-## Routing
+### Helper Methods
+* Facilities to help develop views
+* ?? What else to say about Helper Methods??
+
+### Routing
 * Convention is `{controllerName}/{action}/{:id}`
-* E.g.: Home/User/12   =>   Gets the page of the user with the id of 12
-
-Default MVC "About" page url:  ./Home/About
-* The syntax for the url in this case is:
-  *	"Home" = prefix of controller class (by convention), via routes
-  *	"About" = controller action, an instance method; returns an "Action Result" that refers to the view that will get data injected, as part of .NET's MVC package.  Works as a regular method for testing and utilities.
+* Examples:
+  * Default MVC "About" page url:  `./Home/About` where url syntax is:
+    *	"Home" = prefix of controller class (by convention), via routes
+    *	"About" = controller action, an instance method; returns an "Action Result" that refers to the view that will get data injected, as part of .NET's MVC package.  
+      * Works as a regular method for testing and utilities.
+  * Home/User/12   =>   Gets the page of the user with the id of 12 [[?? should this have a ":" in front of the "12"?? ]]
 
 #### RESTful APIs (convention)
 * GET Account/User   => returns list of users
 * GET Account/User/:id => returns individual id
   * Typical development process is to work on one model at a time.
 
-Bundles - provide additional resources to project
-Move NavBar out of shared `_Layout`, and turn it into a partial.
+#### If using third party API
+* Need to enable CORS on MVC App, to access `www.<Company1Name>.com` from `api.<Company2Name>.com`

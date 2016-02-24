@@ -37,6 +37,6 @@ https://gist.github.com/jcockhren/d92140ce675e0b62fa4f  [database_file_recreate.
 
 
 ************
-#### Microsoft Data Developer Website on Code-First Migrations
-
-* https://msdn.microsoft.com/en-us/data/jj591621.aspx#generating
+### Additional Resources
+* Microsoft Data Developer Website on Code-First Migrations
+ * https://msdn.microsoft.com/en-us/data/jj591621.aspx#generating
