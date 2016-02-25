@@ -38,6 +38,17 @@ https://gist.github.com/jcockhren/d92140ce675e0b62fa4f  [database_file_recreate.
   5. In Package Manager Console, run
   `PM> Update-Database`
 
+### ?? Not sure where this stuff fits, if it belongs at all:
+Beware:  .NET system is 'finicky'!!
+[Config.cs: 'AutomaticMigrationsEnabled = false' for this very reason! ]
+=> Check if table created (should be able to see new table inside InitialCreate.cs).  If table is not there, then need to create table:
+  1. To recreate scaffolding, delete InitialCreations  (revert DB to no tables)
+`PM> Add-Migration InitialCreate` => `InitialCreate` file, with `Designer` and `resx` elements
+  2. Change database:  To recreate DB with entirely new tables, and run Seed method:
+`PM> Update-Database -TargetMigration $InitialDatabase -Force`
+
+
+
 
 ************
 ### Additional Resources
