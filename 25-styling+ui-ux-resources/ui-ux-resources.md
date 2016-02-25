@@ -11,10 +11,3 @@
 * Free diagramming tool with easy UI that integrates with google drive (courtesy of dan hodges):
 https://www.draw.io/
 * A designer tool for creating color combinations that work together well (courtesy of ryan tanay): http://paletton.com/
-
-### To incorporate AngularJS [?? these notes need help!!]
-* In Solution Explorer, click on main project > NuGet PkgMgr > Add angularjs
-* Put assets for Angular inside `_ProjectNameLayout`
-* Add script tag
-* Add script bundle
-* [??] app.js
