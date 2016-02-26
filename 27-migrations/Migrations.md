@@ -3,13 +3,13 @@
 ### Migrations Setup
 https://gist.github.com/jcockhren/4d58d603920c39f29f45
 [Migrations_Setup.md]
-  1. From the menu, Go to Tools -> NuGet Package Manager -> Package Manager Console
+  1. From the menu, Go to `Tools -> NuGet Package Manager -> Package Manager Console`
   2. Follow Steps in commits to ready project for migrations [ https://github.com/NashvilleSoftwareSchool/jitter-juniper/compare/625cb9f9a339e243fb1d3c3a1f03d3d301cb9c60...103d40c?diff=split&name=103d40c ] and then:
 
     `PM> Enable-Migrations -ContextTypeName ProjectName.Models.ProjectNameContext`
 
       where "ProjectName" is your project's name.  
-      N.B.  This step only ever needs to be done once (do not need to redo for scorched earth)
+      N.B.  This step only ever needs to be done once (do not need to redo for scorched earth below)
   3. In order to Create an initial migration :
 	`PM> Add-Migration InitialCreate`
   4. To apply that migration:
@@ -19,21 +19,35 @@ https://gist.github.com/jcockhren/4d58d603920c39f29f45
 https://gist.github.com/jcockhren/243d76d925d51abcb3df [instructions.md]
   1. `PM> Update-Database -TargetMigration $InitialDatabase` (Deletes all tables in database, but keeps Database file)
   2. If you have a file with the name `InitialCreate1` delete it. If it's not there, no worries.
-  3. `PM> Add-Migration InitialCreate` (re-create InitialCreate migration file with your new model's changes)
-  4. `PM> Update-Database` (now apply the newly created migration)
+  3. `PM> Add-Migration InitialCreate` (re-create `InitialCreate` migration file with your new model's changes)
+  4. `PM> Update-Database` (apply the newly created migration)
 
 ### Adding a Migration
   0. Make any necessary changes to your model
-  1. `PM> Add-Migration <NameForNewMigration>` ('NameForNewMigration' should reflect your new model's changes)
-  2. `PM> Update-Database` (now apply the newly created migration)
+  1. `PM> Add-Migration NameForNewMigration` ('NameForNewMigration' should reflect your new model's changes)
+  2. `PM> Update-Database` (apply the newly created migration)
 
-### To Re-Create Database File ("Scorched Earth")
+### To Completely Re-Create Database File
+This "scorched earth" approach may be necessary when all else fails, since Visual Studio has some glitches wrt migrations.
+
 https://gist.github.com/jcockhren/d92140ce675e0b62fa4f  [database_file_recreate.md]
-  1. Go to your project and right-Click on `App_Data` Then select Open in File Explorer
-  2. In your Server Explorer, under `Data Connections`, delete both connections (`DefaultConnection` and ProjectName.mdf)
-  3. Delete the Database FILES in the directory from #1.
-  4. In your Package Manager Console Run
+  1. In Server Explorer, under your `Data Connections`, delete both connections (`DefaultConnection` and `ProjectName.mdf`)
+  2. Go to your project and right-Click on `App_Data`, then select `Open in File Explorer`.  
+  3. Delete the Database FILES in the directory from #1, and copy the full path at the top of the `File Explorer` onto your clipboard.
+  4. In Server Explorer right click on `Data Connections` and select `Add Connection`.  In the open field for `Database File Name`, paste the path from your clipboard and append the name of your project at the end of that path.  Click `OK`.
+  5. In Package Manager Console, run
   `PM> Update-Database`
+
+### ?? Not sure where this stuff fits, if it belongs at all:
+Beware:  .NET system is 'finicky'!!
+[Config.cs: 'AutomaticMigrationsEnabled = false' for this very reason! ]
+=> Check if table created (should be able to see new table inside InitialCreate.cs).  If table is not there, then need to create table:
+  1. To recreate scaffolding, delete InitialCreations  (revert DB to no tables)
+`PM> Add-Migration InitialCreate` => `InitialCreate` file, with `Designer` and `resx` elements
+  2. Change database:  To recreate DB with entirely new tables, and run Seed method:
+`PM> Update-Database -TargetMigration $InitialDatabase -Force`
+
+
 
 
 ************
