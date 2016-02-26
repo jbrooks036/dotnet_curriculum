@@ -17,12 +17,18 @@
 * Controllers can also be used with template engines in the MVC framework
  * to present (a list of) objects to the View.
 * `ActionResults` of a controller match the View with the same name.
-* `ViewBag` - for passing data from controller to View.  Works like a dictionary, not a class or property.  One View Bag is unique for each call to a page.  Can be manipulated inside controller, and/or cshtml.
- * Attribute = <key, value> pair, with no restrictions on it.
-   * e.g. Angular's ng-view; Bootstrap and Foundation each have their own attributes.
-   * Html built on top of XML - made to be extensible. Can embed additional attributes to any tag created.
-   * Even classes can be dynamic: `@class` does not call C# class, but escapes .css class.
- * n.b. ViewBag is a dynamic object and therefore has no IntelliSense support; errors will not be discovered during compile, only at runtime
+* `ViewBag` - for passing data (via variables) from Controller to View.  
+  * Connects all way from db to views (full stack)
+  * Works like a dictionary, not a class or property.  Uses attribute, which isa  <key, value> pair, with no restrictions on it.
+   * e.g. Angular's ng-view; Bootstrap and Foundation each have their own attributes.  Html built on top of XML - made to be extensible.
+   * Can embed additional attributes to any tag created.
+ * One View Bag is unique for each call to a page.  
+ * Can be manipulated inside controller, and/or cshtml.
+ * ViewBag is a dynamic object and therefore has no IntelliSense support; errors will not be discovered during compile, only at runtime
+ * ViewBag - for passing var's around.
+"{}"  could be in code, or in html
+
+
 * Controller will change over time.
   * Business logic belongs in Repository, not Controller.
 
@@ -32,9 +38,11 @@
   * Supports use of embedded C# inside html-syntax files using Razor syntax.
   * Razor engine then interprets html with embedded C# into pure html file - this happens on the server, before html reaches browser
   * `@` delimits C# code and prefixes C# variables
- * .cshtml files can be shared by multiple views, e.g.
+     * Even classes can be dynamic: `@class` does not call C# class, but escapes .css class.
+  * .cshtml files can be shared by multiple views, e.g.
    * `_Layout`
    * `_Partials`
+     * "Partial" = view not rendered by Controller, but called by other views
 * Q: What is the syntax for injecting a View into layout?
 * A: `@RenderBody()` helper function ("lazy evaluator")
     * Waits until last minute, when view is thrown at it during rendering of `Index`.
