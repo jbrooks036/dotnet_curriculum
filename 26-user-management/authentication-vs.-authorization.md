@@ -22,5 +22,10 @@ In terms of web apps, very crudely speaking:
 * authentication is when you check login credentials to see if you recognize a user as logged in, while
 * authorization is when you look to your access control to determine whether the user is allowed to edit, delete or create content
 
+###### Sonda's Notes
+Authentication says whether your username and password match.
+Authorization says whether you have the right to use a thing. You can be authenticated but not authorized for something and vice versa. You may be authorized to view your own GMAIL account, but if you type the wrong password, it fails on authentication grounds. 
+
+
 
 #### For further information please visit <a href="http://en.wikipedia.org/wiki/AAA_protocol">this link</a></h3>
