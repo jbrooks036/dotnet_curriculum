@@ -7,5 +7,16 @@
 ### Learning SQL through Doing  
 * https://github.com/jcockhren/learning-sql
 
-## Class Project Assignment / Exercise
-* [Jitter] Acceptance Criteria -> https://gist.github.com/jcockhren/49233808b66b4fdb29ee
+## Mid-Capstone Project (per Eliza?)
+* A desktop application with WPF, C#, and XAML.[?? obviously, this will need to change to MVC??]
+* Must be something you can show your employer
+* Must use a database, as in storing local data. And you must perform all the database CRUD (Create, Read, Update, Delete) operations.
+* Must be feasible and take about a week to finish.
+* Timeline:
+  * Monday - approve a project
+  * Tuesday - create wireframe and user story for your project
+  * Wednesday - Following Friday - Start coding
+  * That next Monday - Presentation Day
+
+## Final Class Project Assignment / Exercise
+  * [Jitter] Acceptance Criteria -> https://gist.github.com/jcockhren/49233808b66b4fdb29ee

@@ -1,7 +1,5 @@
 ## Setting up new project in Visual Studio 2015
-### with appropriate github connection
-
-(thanks to Caitlin Stein)
+### (with appropriate github connection)
 
 1. Create repo in github w/ visual studio .gitignore
 
@@ -14,6 +12,11 @@
   * uncheck boxes for new repo and new directory
   * ? Template: ASP.NET 4.6 Template
   * Add Unit Tests
-  * ? Add folders and core references for Web API
+  * Add folders and core references for Web API [??]
+
+4. Push your Visual Studio Project to Github:
+ * Read this whole thing before beginning, and basically follow it word for word.
+  * http://michaelcrump.net/setting-up-github-to-work-with-visual-studio-2013-step-by-step
+
 
 => Add, commit, and push at will
