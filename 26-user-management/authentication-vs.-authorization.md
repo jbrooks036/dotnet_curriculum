@@ -23,9 +23,13 @@ In terms of web apps, very crudely speaking:
 * authorization is when you look to your access control to determine whether the user is allowed to edit, delete or create content
 
 ###### Sonda's Notes
-Authentication says whether your username and password match.
-Authorization says whether you have the right to use a thing. You can be authenticated but not authorized for something and vice versa. You may be authorized to view your own GMAIL account, but if you type the wrong password, it fails on authentication grounds. 
-
+* Authentication says whether your username and password match.
+* Authorization says whether you have the right to use a thing.
+* You can be authenticated but not authorized for something and vice versa.
+   * You may be authorized to view your own GMAIL account, but if you type the wrong password, it fails on authentication grounds.
+* There is an attribute that we can use called  [Authorize] that you can add above the controller that you want to restrict
+  * Means that only if the user is logged in, can they access this.   
+  * Can be added above ActionResult Index in the controller.
 
 
 #### For further information please visit <a href="http://en.wikipedia.org/wiki/AAA_protocol">this link</a></h3>

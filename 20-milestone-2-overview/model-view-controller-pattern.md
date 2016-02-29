@@ -25,6 +25,13 @@ A controller does exactly what its name implies. It serves as the hub of your ap
 ###### Sonda's Notes
 Controller - (aka router) talks between the model and view. Central hub of communication. User input is what motivates the controller to do things. This is the user’s browser with input and give replies. Controller will never interact with the data store. Typically there is a controller for each large concept.
 
-## Source / Further Reading
+Opening up the newest version of MVC ASP.NET:
+-You will go to the new project > Web > Web application. MVC 4 is a past version.
+
+
+
+## Sources / Further Reading
+
+* http://www.asp.net/mvc
 
 * [Wikipedia] (http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller)

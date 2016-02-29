@@ -26,6 +26,8 @@ https://gist.github.com/jcockhren/243d76d925d51abcb3df [instructions.md]
   0. Make any necessary changes to your model
   1. `PM> Add-Migration NameForNewMigration` ('NameForNewMigration' should reflect your new model's changes)
   2. `PM> Update-Database` (apply the newly created migration)
+      * Update database will run the seed data if it doesn’t initialize in the beginning.
+
 
 ### To Completely Re-Create Database File
 This "scorched earth" approach may be necessary when all else fails, since Visual Studio has some glitches wrt migrations.
@@ -54,3 +56,5 @@ Beware:  .NET system is 'finicky'!!
 ### Additional Resources
 * Microsoft Data Developer Website on Code-First Migrations
  * https://msdn.microsoft.com/en-us/data/jj591621.aspx#generating
+* Wikipedia
+ * https://en.wikipedia.org/wiki/Schema_migration

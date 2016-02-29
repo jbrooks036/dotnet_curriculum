@@ -1,5 +1,5 @@
 {\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Georgia;}{\f1\fnil\fcharset0 Arial;}{\f2\fnil\fcharset0 Trebuchet MS;}{\f3\fnil\fcharset0 Nova Mono;}{\f4\fnil\fcharset1 Cambria Math;}{\f5\fnil\fcharset0 Calibri;}{\f6\fnil\fcharset2 Symbol;}}
-{\colortbl ;\red0\green0\blue0;\red51\green51\blue51;\red255\green255\blue255;\red0\green0\blue255;\red65\green131\blue196;\red102\green102\blue102;\red119\green119\blue119;\red37\green37\blue37;\red11\green0\blue128;\red17\green85\blue204;}
+{\colortbl ;\red0\green0\blue0;\red51\green51\blue51;\red255\green255\blue255;\red0\green0\blue255;\red65\green131\blue196;\red102\green102\blue102;\red119\green119\blue119;\red37\green37\blue37;\red11\green0\blue128;\red17\green85\blue204;\red163\green21\blue21;}
 {\*\generator Riched20 6.3.9600}{\*\mmathPr\mmathFont4\mwrapIndent1440 }\viewkind4\uc1 
 \pard\sl276\slmult1\qc\cf1\b\f0\fs28\lang9 Sonda's NSS7 Classroom Notes on Databases \b0\f1\fs22\par
 
@@ -20,7 +20,7 @@
 
 \pard\keep\keepn\sb260\sa240\sl343\slmult0\cf2\highlight3\b\f0\fs24 ACID\cf6\highlight0\f2\par
 
-\pard\sa240\sl349\slmult0\cf7\highlight3\b0\f0 In computer science, ACID (Atomicity, Consistency, Isolation, Durability) is a set of properties that guarantee that database transactions are processed reliably. In the context of databases, a single logical operation on the data is called a transaction. For example, a transfer of funds from one bank account to another, even involving multiple changes such as debiting one account and crediting another, is a single transaction. -- Wikipedia: ACID\cf1\highlight0\f1\fs22\par
+\pard\sa240\sl349\slmult0\cf0\highlight3\b0\f0 In computer science, ACID (Atomicity, Consistency, Isolation, Durability) is a set of properties that guarantee that database transactions are processed reliably. In the context of databases, a single logical operation on the data is called a transaction. For example, a transfer of funds from one bank account to another, even involving multiple changes such as debiting one account and crediting another, is a single transaction. -- Wikipedia: ACID\highlight0\f1\fs22\par
 
 \pard\keep\keepn\sb340\sa240\sl294\slmult0\cf2\highlight3\b\f0\fs24 What are the types of databases?\cf1\highlight0\f2\fs26\par
 
@@ -11572,33 +11572,58 @@ adad9cadad94a5ad94a5a59cadad94a5a594a5a58c9ca594a5a58c9ca594a5a5849c9c849c9c7b
 \f0 -\f1\par
 \par
 \par
-\b\f0 Monday, January 12, 2015:\b0\f1\par
+\b\f0\fs24 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\par
+\fs28 Computer Science Stuff (from Sonda's Notes)\par
+\b0\f1\fs22\par
+\b\f0\fs24 Indexing a Database:\b0\f1\fs22\par
+\f0\fs24 -One way sort a database is that you know which column in bytes that place you want is, so you skip the byte columns it is, and read a bit. And you repeat that over and over until you get all instances of a certain item. For example, if your trying to look up last name for Smith, the database knows that it\rquote s at the 18th byte of a row, and goes to it to check and repeats. Not the fastest, but a lot better than going through the whole table byte by byte.\f1\fs22\par
+\f0\fs24 -For indexing, you create a giant hash with a list inside of all the rows that meet a certain criteria. For example, an index can have a section called A telling us that it\rquote s row is between like 2 to 10. So when we look up Arthur, it goes to the index and then goes to the rows. This is a very simple index since it only tells you the first letter, not if it has A in the name. \f1\fs22\par
+\f0\fs24 -Databases actually use binary trees. A lot of people have spent bunches of time and money to make databases quickly sortable so you should let the database structure do it as opposed to making a sorting yourself.\f1\fs22\par
+\f0\fs24 -There is a cost. When you add something, you have to index it so you can get it back rapidly. So, adding something will become slower since you will have to index it, or sometimes you just want to add it quickly so you don\rquote t index it right off.\f1\fs22\par
+\par
+\b\f0\fs24 Constraints\b0\f1\fs22\par
+\f0\fs24 -Rules that you make about your data. So when you make a column and specify of varchar of 12, that means you made a constraint that it will be either number or letters and up to 12 things.\f1\fs22\par
+\f0\fs24 -Required means it cannot be blank or null. So required varchar 12 means it means letters and numbers that are between 1 and 12.\f1\fs22\par
+\par
+\b\f0\fs24 Keys in Database:\b0\f1\fs22\par
+\f0\fs24 -Primary key is a unique identifier. Sometimes people want a compound primary key that spans two columns: first name | last name | birthday. Compound keys are much slower but people do it because they\rquote re \ldblquote schmucks\rdblquote .\f1\fs22\par
+\f0\fs24 -Foreign key represents the primary key in another table. At the same time you\rquote re setting an index on them using this key and sometimes the database for you.\f1\fs22\par
+\par
+\b\f0\fs24 Normalization:\b0\f1\fs22\par
+\f0\fs24 -Don\rquote t put the same thing in two places\f1\fs22\par
+\f0\fs24 -Don\rquote t duplicate data because if you want one record change, you will have to change it in all places.\f1\fs22\par
 \par
 \par
-\trowd\trgaph100\trrh1\trpaddl100\trpaddr100\trpaddfl3\trpaddfr3
-\clcfpat1\clcbpat3\clbrdrl\brdrw16\brdrs\brdrcf1\clbrdrt\brdrw16\brdrs\brdrcf1\clbrdrr\brdrw16\brdrs\brdrcf1\clbrdrb\brdrw16\brdrs\brdrcf1 \cellx3030\clcfpat1\clcbpat3\clbrdrl\brdrw16\brdrs\brdrcf1\clbrdrt\brdrw16\brdrs\brdrcf1\clbrdrr\brdrw16\brdrs\brdrcf1\clbrdrb\brdrw16\brdrs\brdrcf1 \cellx6060\clcfpat1\clcbpat3\clbrdrl\brdrw16\brdrs\brdrcf1\clbrdrt\brdrw16\brdrs\brdrcf1\clbrdrr\brdrw16\brdrs\brdrcf1\clbrdrb\brdrw16\brdrs\brdrcf1 \cellx9090 
-\pard\intbl\sl240\slmult1\b\f0 Javascript\cf0\b0\f5\cell\cf1\b\f0 Ruby\cf0\b0\f5\cell\cf1\b\f0 C#\cf0\b0\f5\cell\row\trowd\trgaph100\trrh5320\trpaddl100\trpaddr100\trpaddfl3\trpaddfr3
-\clcfpat1\clcbpat3\clbrdrl\brdrw16\brdrs\brdrcf1\clbrdrt\brdrw16\brdrs\brdrcf1\clbrdrr\brdrw16\brdrs\brdrcf1\clbrdrb\brdrw16\brdrs\brdrcf1 \cellx3030\clcfpat1\clcbpat3\clbrdrl\brdrw16\brdrs\brdrcf1\clbrdrt\brdrw16\brdrs\brdrcf1\clbrdrr\brdrw16\brdrs\brdrcf1\clbrdrb\brdrw16\brdrs\brdrcf1 \cellx6060\clcfpat1\clcbpat3\clbrdrl\brdrw16\brdrs\brdrcf1\clbrdrt\brdrw16\brdrs\brdrcf1\clbrdrr\brdrw16\brdrs\brdrcf1\clbrdrb\brdrw16\brdrs\brdrcf1 \cellx9090 
-\pard\intbl\sl240\slmult1\cf1\f0 SCRIPT\f1\par
-\f0 -scripting language\f1\par
-\f0 (make code, runs through interpreter such as the browser to run it, and there is an output)\f1\par
 \par
-\f0 DYNAMICALLY-TYPED\f1\par
-\f0 LOOSELY-TYPED\f1\par
-\f0 -you can put a number as a string and still run it like a number. Type Coercion.\cf0\f5\cell\cf1\f0 SCRIPT\f1\par
-\f0 -scripting language\f1\par
+\b\f0 Making your Project Entity-Friendly:\b0\f1\par
+\f0 -Go the project and right-click to Add > Manage Nuget > Search and install EntityFramework.\f1\par
+\f0 -Make a class called ObjectContext.cs within the ProjectName namespace and use the interface DbContext with a semicolon. Make another class called Event.cs\f1\par
+\f0 -Add the using System.Data.Entity at the top and Using ProjectName\f1\par
+\f0 -Within ObjectContext.cs add the property DBSet and make it public, that allows you to pull a set of entities from the database. In SQL, there are the same as query sets.\f1\par
+\f0 -Within the Object.cs add a field ObjectID which is an observable collection that represents the actually data(??)\f1\par
+\f0 -Right-Click Data Connection from Server Explorer. Now add a Connection > Server Name .\\SQLEXPRESS > Under "Connect to database" add ProjectName.ObjectContext. You can test it and then add it. It should populate in Server Explorer with tables, views, etc.\f1\par
+\f0 -Technically, the connection belongs in the Object class, but we\rquote ll move it to the mainwindow.cs because it\rquote s where the program begins. So we\rquote ll move the observable collection line here. So when the window starts up, it makes a new instance of the Objects collection. \f1\par
 \par
-\f0 DYNAMICALLY-TYPED\f1\par
-\f0 LOOSELY-TYPED\cf0\f5\cell\cf1\f0 COMPILED\f1\par
-\f0 -compiled language\f1\par
-\f0 (make code, goes through compiler that makes an executable of machine-readable binaries, then run it) so takes longer to compile but the code runs faster. Tells you syntax errors as you write.\f1\par
+\f0 How do I write a unit test to see whether the connection to database is working?\f1\par
+\f0 -Make a TestPersistance.cs in your project.\f1\par
+\f0 -Go back and add (or prep) a line to the database using db.Add in the MainWindow.cs. We\rquote re doing a Code First technique where we first write the code to make .NET generate the database for us.\f1\par
+\f0 -In reality, the mainwindow should not care about data events. There should be a class for business logic (our main window) and interacting with the queries of the database (DAL such as LINQ or queries or accessing the data). So we should have a level of abstraction that decouples the two, so we have a repository in the middle. \f1\par
+\f0 -Lazy Evaluation - allow the platform underneath you to control data access for you. For example, the LINQ query is not evaluated until the foreach gets evaluated. So you can make as many queries as you want and then evaluate them.\f1\par
 \par
-\f0 STRICTLY TYPED\f1\par
-\f0 -you cannot put a number as a string and pretend it works. You must specify each data type and it has a list of functions with that data type.\f1\par
+\f0 -We make a repository to handle the LINQ logic, and one popular pattern is to generalize it such that your tests are actually querying a list and the list happens to have plugins to access your database. In this way, you make an interface such that you can use a different database type if you wish later, and the rest of the program does not have to worry about what that is because the interface ensures that the data and its methods get handled the same way no matter what data type it is throughout your whole program.\f1\par
+\f0 -So you can create an interface such as IObjectRepository.cs within a new folder called Repository. In this interface, you must add the names for the methods that you want used for any class that is using this interface such as Add, Delete, etc.\f1\par
+\f0 -Next we can create an ObjectRepository.cs class and use interface as semicolon. If you click on option > Implement Interface, then it will repopulate the page with all those empty methods that the interface requires.\f1\par
+\f0 -If you want something back that you can do stuff with, you will use IQueryable to query the data\f1\par
+\f0 -a predicate is a statement that filters your queryable. It\rquote s a collection that you can run a query through.\f1\par
 \par
 \par
-\cf0\f5\cell\row 
-\pard\sl276\slmult1\cf1\f1\par
-\cf2\highlight3\b\f0\fs24\par
+\f0 -now with an interface and ObjectRepository.cs class in place, you can make a ObjectRepositoryTest.cs to test these methods that are in your ObjectRepository.cs class. The first things you can do in the class is implement a constructor to open your database\f1\par
+\f0 -##CSharp is the IRC Channel where all the C sharp nerds hang out.\f1\par
+\par
+{\cf0\f0{\field{\*\fldinst{HYPERLINK https://msdn.microsoft.com/en-us/library/bb386941%28v=vs.110%29.aspx }}{\fldrslt{https://msdn.microsoft.com/en-us/library/bb386941%28v=vs.110%29.aspx\ul0\cf0}}}}\f1\fs22\par
+
+\pard\sl252\slmult0\f0\fs20 DataContext db = \cf4 new\cf1  DataContext(\cf11 @"c:\\Northwnd.mdf"\cf1 );\fs22  \f1\par
+
+\pard\sl276\slmult1\par
 }
  
