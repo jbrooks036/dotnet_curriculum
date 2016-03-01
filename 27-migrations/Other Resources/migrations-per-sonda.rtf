@@ -1,0 +1,81 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Georgia;}{\f1\fnil\fcharset0 Arial;}{\f2\fnil\fcharset0 Consolas;}}
+{\colortbl ;\red0\green0\blue0;\red17\green85\blue204;\red0\green0\blue255;\red34\green34\blue34;\red238\green238\blue238;\red255\green255\blue255;}
+{\*\generator Riched20 6.3.9600}\viewkind4\uc1 
+\pard\sl276\slmult1\cf1\b\f0\fs28\lang9  \b0\f1\fs22\par
+\b\f0\fs28 Migrations (from Sonda's Notes)\par
+\b0\f1\fs22\par
+\b\f0 Seeding your Database:\b0\f1\par
+\f0 -First involves a migration\f1\par
+\f0 -Another way is to set an initializer for your database context that brings in database for you. \f1\par
+\par
+\f0 If you\rquote ve done a migration:\f1\par
+\f0 -So if you go to your configuration.cs file you can make a{\cf2{\field{\*\fldinst{HYPERLINK "http://www.c-sharpcorner.com/UploadFile/abhikumarvatsa/entity-frameworks-database-seed-method/"}}{\fldrslt{\ul\cf3\cf3\ul  Seed method}}}}\f0\fs22  that takes the EventContext. Within the method, you can say something like:\f1\par
+\par
+\i\f0 protected override void Seed(WaitForIt.EventContext.context)\{\i0\f1\par
+\f0\tab\i context.Events.AddorUpdate<Model.Event>(\i0\f1\par
+\f0\tab\i n => n.Name, \i0      <--if there is an object of the same thing, to not add another one\f1\par
+\f0\tab\i new Model.Event \{ Name = \ldblquote Jurnell\rquote s Birthday\rdblquote , Date = \ldblquote 10/05/2015\rdblquote\}\i0\f1\par
+\par
+\i\f0\})\i0\f1\par
+\f0 This way works if you have done a migration already and you want to use configuration.cs within that folder in order to seed data. Jurnell COMMITTED this example above to the WaitForIt project. You also need to set AutomaticMigationEnabled = true, so that every time it builds it will seed the database.\f1\par
+\par
+\f0 What if you haven\rquote t done any migrations? Here\rquote s another strategy.\f1\par
+\par
+\f0 You can create a connection string so that you have two databases, one for your production run and one for your test run:\f1\par
+\par
+\i\f0\tab public EventContext(): base(\ldblquote NameofDatabase\rdblquote )\{ \}\i0\f1\par
+\par
+\par
+\b\f0 If you have a column (say, from a migration) and its not part of the constructor, what happens?\b0\f1\par
+\f0 If you want to add info to that column, you will have to change your constructor properties accordingly. If you change the constructor without changing the database properly (such as doing a migration to add a column, or delete/building another database), then it will error out. \f1\par
+\par
+\f0 If you have a column, but it is not used in the constructor what happens is dependent on the property of that column. For example, if it\rquote s okay for that column to be null, then it will not produce any errors since it\rquote s not required to have data in it. However, if the column is required to be NOT NULL, then it will error out.\f1\par
+\par
+\f0 Pipes and sockets = Unix\f1\par
+\f0 lo is loopback interface. \f1\par
+\f0 network address spaces\f1\par
+\par
+\f0 For one port and one address, only one connection can be open (multiplexing is outside this topic scope). What if there are multiple things on the server that need to talk to itself, how do you allow multiple things to listen to same server and save database and make sure that all these application can talk to this. \f1\par
+\par
+\f0 We then use sockets and named pipes. Sockets are files saved only in memory that point to a reference to the database. It has a prefix  called .sock, a location in memory that points to home and it\rquote s a local connection. Thus it bypasses the TCP/IP stack (what you use for internety things on the WWW). Since you know you're receiving and sending to itself, you don\rquote t need that extra packet info. \f1\par
+\par
+\f0 For the server, all it knows is to manage the database and is none the wiser as to who is connecting to it. It just knows that it listens for connections. Thus, it also doesn\rquote t know who is connecting to the database. That\rquote s where the authentication comes in. So we also need something called \ldblquote connection strings\rdblquote  that will allow your app to authenticate with the server. Connection strings are defined within your app. Typically, there is a centralized system to handle credentials, in a totally different server than where your database is stored.\f1\par
+\par
+\f0 Active Directory(AD), then you have your app(which is a client to the database but a server to your user), your DB on a server. AD doesn\rquote t care where it is located but it checks the credentials and gives the type of authorization is needed for a certain username and password. The AD will then grant a token which authorizes you for an hour to access the database. Usually, the server has this token.\f1\par
+\par
+\f0 There is also something called the \ldblquote web of trust\rdblquote  which  means that if an app has a \ldblquote secret handshake\rdblquote  and the database has the same \ldblquote secret handshake\rdblquote  and the intermediaries can verify that it\rquote s all the same, then the app can be trusted. \f1\par
+\b\f0\par
+\par
+What is a Migration and how do you update or recall a database structure change?\b0\f1\par
+\f0 Migration has two types. There are schema and data. Migration just means changing the structure of the database. For example, in a data migration you want to add a whole column such as adding hashtags, how are you going to backwards add these hashtags to all your past data items? You could delete it and start again, but migration is a better way to do it when you don\rquote t want your millions of data deleted. It\rquote s a way to change the structure without having to delete and recreate the tables.\f1\par
+\f0 -To add migration, go to NuGet Manager Console and Type Enable-Migrations. You don\rquote t want to autogenerate the migration most of the time, so you can do it manually. For example, for hashes, you can put in your console \ldblquote Add-Migration AddHashField\rdblquote . This does some scaffolding in which it readies your database and create a class AddHashField: DbMigration with two methods Up and Down. In the up method (meaning the database from here on out), you can add \f1\par
+\par
+\i\f0 public override void Up()\i0\f1\par
+\i\f0\tab AddColumn(\ldblquote dbo.Events\rdblquote , \ldblquote Hash\rdblquote , c => c.String()); \i0\f1\par
+\par
+\f0 The dbo (database object) before the Events (the name of the table we\rquote re interested in) , then add the field we want which is \ldblquote hash\rdblquote , and the lambda that says for any column c, you want it to have type string.\f1\par
+
+\pard\fi720\sl276\slmult1\par
+
+\pard\sl276\slmult1\i\f0 public override void Down()\i0\f1\par
+\i\f0\tab DropColumn(\ldblquote dboEvents.EventContext\rdblquote , \ldblquote Hash\rdblquote );\i0\f1\par
+\par
+\f0 -this is the down migration. Both methods are overrides since it override\rquote s the program\rquote s migration\rquote s idea of up and down. This is because it requires the interface dbMigration and which means .NET has to require the methods in dbMigration, their default implementation of up and down.\f1\par
+\par
+\f0 Now in the console, you can do \ldblquote Update-Database -Verbose\rdblquote . You don\rquote t have to use verbose, but it gives your more info as it\rquote s running. This is to do an up migration\f1\par
+\par
+\f0 If we want to \ldblquote Update-Database -TargetMigration $InitialDatabase\rdblquote  let\rquote s you undo all the migration. If you want to go directly down \ldblquote Update-Database -TargetMigration SpecificMigrationName\rdblquote  will take you to a specific migration to do down migration.\f1\par
+\par
+\b\f0 What if you want to delete a field your database?\b0\f1\par
+\f0 In general, people don\rquote t delete fields or columns in their database because that means deleting data. It\rquote s easier and safer, to add the column you want and then just take out the old code that is referring to the old fields you no longer want to use. Thus, it\rquote s still in the database but there is no way to access those particular fields anymore since your code doesn\rquote t have those references.\f1\par
+\par
+\b\f0 From StackOverflow: What is the difference between the up and down methods in migration?\b0\f1\par
+{\cf0\f0{\field{\*\fldinst{HYPERLINK https://stackoverflow.com/questions/9769515/c-sharp-code-first-migration-up-down }}{\fldrslt{https://stackoverflow.com/questions/9769515/c-sharp-code-first-migration-up-down\ul0\cf0}}}}\f0\fs22  \f1\par
+\cf4\highlight5\f2\fs20 Up\highlight6\f1\fs22  method upgrades your database from its current state (represented by your previous migration) to the state expected by your current code migration. \highlight5\f2\fs20 Down\highlight6\f1\fs22  method does the reverse operation - it removes all changes from the current migration and reverts database to state expected by the previous migration. It is same like install / uninstall the migration. Only one of these methods is executed when you call \highlight5\f2\fs20 update-database\highlight6\f1\fs22 . To use \highlight5\f2\fs20 Down\highlight6\f1\fs22  method you must explicitly specify target migration for your upgrade. If the target migration is the old one, the migration API will automatically use \highlight5\f2\fs20 Down\highlight6\f1\fs22  method and downgrade your database.\cf1\highlight0\par
+\b\f0\par
+\b0\f1\par
+\par
+\par
+\b\f0\fs24\par
+}
+ 
