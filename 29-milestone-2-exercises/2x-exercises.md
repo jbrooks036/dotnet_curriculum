@@ -8,10 +8,10 @@
 * https://github.com/jcockhren/learning-sql
 
 ## Mid-Capstone Project (per Eliza?)
-* A desktop application with WPF, C#, and XAML.[?? obviously, this will need to change to MVC??]
 * Must be something you can show your employer
-* Must use a database, as in storing local data. And you must perform all the database CRUD (Create, Read, Update, Delete) operations.
-* Must be feasible and take about a week to finish.
+* Must use a database, as in storing local data
+  * You must perform all the database CRUD (Create, Read, Update, Delete) operations
+* Must be feasible and take about a week to finish
 * Timeline:
   * Monday - approve a project
   * Tuesday - create wireframe and user story for your project

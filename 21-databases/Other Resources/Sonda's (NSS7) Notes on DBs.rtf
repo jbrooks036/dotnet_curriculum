@@ -77,7 +77,6 @@
 
 \pard\sl276\slmult1\par
 \par
-\b\f0 Wednesday, January 7, 2015:\b0\f1\par
 \par
 \highlight3\b\f0\fs24 DATABASES\highlight0\b0\f1\fs22\par
 \highlight3\f0\fs24\tab What are databases?  A type of data store.  Data store is a place we can store data.\highlight0\f1\fs22\par
@@ -164,8 +163,6 @@
 \lang9\par
 \cf8\highlight3\f0\fs24 Eliza:  At least 95% of the time, you want a relational database.  But in the modern age, you don\rquote t have to choose between one or the other.  Things like Postgres allow for storing document oriented stuff in a relational database.  We will be focusing on relational databases.\cf1\highlight0\f1\fs22\par
 \par
-\cf2\highlight3\b\f0\fs24\par
-\cf1\highlight0\fs22 Friday, January, 9 2015:\b0\f1\par
 \par
 \b\f0 Import SQLite File:\b0\f1\par
 \f0 -download sqlite task manager\f1\par
@@ -11622,7 +11619,53 @@ adad9cadad94a5ad94a5a59cadad94a5a594a5a58c9ca594a5a58c9ca594a5a5849c9c849c9c7b
 \par
 {\cf0\f0{\field{\*\fldinst{HYPERLINK https://msdn.microsoft.com/en-us/library/bb386941%28v=vs.110%29.aspx }}{\fldrslt{https://msdn.microsoft.com/en-us/library/bb386941%28v=vs.110%29.aspx\ul0\cf0}}}}\f1\fs22\par
 
-\pard\sl252\slmult0\f0\fs20 DataContext db = \cf4 new\cf1  DataContext(\cf11 @"c:\\Northwnd.mdf"\cf1 );\fs22  \f1\par
+\pard\sl252\slmult0\f0\fs20 DataContext db = \cf4 new\cf1  DataContext(\cf11 @"c:\\Northwnd.mdf"\cf1 );\fs22  \par
+\par
+\par
+\par
+\par
+
+\pard\sl276\slmult1\b\fs24 Databases:\b0\f1\fs22\par
+\f0\fs24 -there are already connections that are in place between your program and your database. There is already a pool of connections in place where depending upon the operation, any call to pool data, and will use the connection to talk to the database. \f1\fs22\par
+\f0\fs24 -In the code, it will specify preregistered pathways that can be used and then you can use those connections over and over again, so the wait time is not as long for the O\\RM\f1\fs22\par
+\par
+\f0\fs24 So how does this look?\f1\fs22\par
+\f0\fs24 -in our program, manage nuget package manager > Search EntityFramework > Install EntityFramework. Accept Terms. Now it should be added to the references.\f1\fs22\par
+\f0\fs24 -A model is simply a class. Object Relational Model meaning that it takes the objects in your code and lines them up with the data you have in your database. The attributes you care about make the model unique, and you specify these as properties in your class.\f1\fs22\par
+\f0\fs24 -Add reference has a using in your program. Then add another class with DbContext as an addition using a semicolon (ex: public class ShapesContext : DbContext). You can use DbSet to link up the database with the class. \f1\fs22\par
+\f0\fs24 -Then within your main, you must make a new instance of your database (new ShapeContext ()). Make a new rectangle. Use .Add to prep what you want into the databases and then .SaveChanges to actually add them to database.\f1\fs22\par
+\f0\fs24 -When you close a program, you must close the connection as well. Otherwise, they stay persistently open and you will have a zombie database that will be kept alive even though you are not using the database for anything. The connection will stay open eating up space and memory. When you\rquote re done, close your database connection with something like db.Close(). But programmers are awfully forgetful people, so they made something called a using to close the connection for you. You wrap all your database connection code within a using(). When that reaches the end of the code block, then it closes itself.\f1\fs22\par
+\f0\fs24 -dialect - specific database-specific version of SQL language in order to query the database from your code. The ORM does that for you, so that you don\rquote t have to learn dialects. The ORM automatically figures out what database you are running and then links the commands together. In Microsoft, it\rquote s called LINQ, a query language that provide assemblies to use the .NET framework with SQL databases. LINQ uses commands very very similar to SQL but not quite (so don\rquote t assume you know what the command does just cause you saw it in SQL) to query your database from your code. The return of a LINQ query is a .NET collection that you can use regular methods on.\f1\fs22\par
+\par
+\f0\fs24 view - a combination of tables that group together data.\f1\fs22\par
+\f0\fs24 functions take input and give output without changing global state. procedures are a set of things to do and don\rquote t have input and outputs where you can store the code as data. It\rquote s not a real good idea/practice to store procedures because there is no way of tracking it since it doesn\rquote t have inputs and outputs.\f1\fs22\par
+\f0\fs24 -mutations are changes that are made onto a database done by code. Then it will have a migration history.\f1\fs22\par
+\par
+\f0\fs24 - \ldblquote Unit of Work\rdblquote  and \ldblquote Repository Pattern\rdblquote  are two patterns that you need to know to work with .Net database structures.\par
+\par
+\b\fs22 DATABASES!!!\b0\f1\par
+\f0 a database is structured collection of data (all day, err day Jurnell promises). Examples are lists, files (CSV, XML, etc), keyboards (because each key maps to a value) because you can sort it and put it into structure.\f1\par
+\f0 Databases are differentiated by how it\rquote s organized. \f1\par
+\f0\tab Relational\f1\par
+\f0\tab Document - MongoDB. JSON\f1\par
+\f0\tab Columnar - \f1\par
+\f0\tab Graph - Neo4J, social graph Facebook has, \f1\par
+\f0\tab\f1\par
+\f0 In a database, cardinality is the number of rows and arity is the number of columns.\f1\par
+\par
+\f0 Tools to help model:\f1\par
+\f0 attributes - they have to be independent of one another. They have orthogonality. Because sets are inherently unique, their attributes must be unique.\f1\par
+\f0 the domain - \cf8\highlight3  all the values which a {\cf9{\field{\*\fldinst{HYPERLINK "https://en.wikipedia.org/wiki/Data_element"}}{\fldrslt{\ul\cf4\cf4\ul data element}}}}\f0\fs22  may contain\cf1\highlight0\f1\par
+\f0 range - the output of function\f1\par
+\par
+\f0 Model Relationships\f1\par
+\f0 one to one - an author can have only one SSN. Each SSN only goes with one author. It\rquote s a unique identifier that makes a unique pairing.\f1\par
+\f0 one to many - a published work can have only one citation style. a citation style can be used with many published works. It\rquote s a instance to category.\f1\par
+\f0 many to many - an author can have multiple books. A book can have many authors.\f1\par
+\par
+\par
+
+\pard\sl252\slmult0\par
 
 \pard\sl276\slmult1\par
 }

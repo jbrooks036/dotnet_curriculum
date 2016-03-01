@@ -1,0 +1,158 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Georgia;}{\f1\fnil\fcharset0 Arial;}{\f2\fnil\fcharset0 Nova Mono;}{\f3\fnil\fcharset1 Cambria Math;}{\f4\fnil Cambria Math;}}
+{\colortbl ;\red0\green0\blue0;\red37\green37\blue37;\red255\green255\blue255;\red11\green0\blue128;\red0\green0\blue255;}
+{\*\generator Riched20 6.3.9600}{\*\mmathPr\mmathFont3\mwrapIndent1440 }\viewkind4\uc1 
+\pard\sl276\slmult1\cf1\b\f0\fs28\lang9  \b0\f1\fs22\par
+\b\f0\fs28 Computer Science Topics  (from Sonda's Notes)\par
+\b0\fs22\par
+\b Sets and their Theory by Jurnell:\b0\f1\par
+\f0 -Set Basics: \f1\par
+\f0\tab\i Set\i0  is collection of zero or more unique things.\f1\par
+\f0\tab\i Subset \i0 is a collection of elements in another set.\f1\par
+\b\f0\tab\b0\i Tuple\i0  is a set containing multiple types of things\f1\par
+\f0\tab\i Cardinality\i0  is the number of items in a set\f1\par
+\par
+\f0 -Set Operations (brief)\f1\par
+
+\pard\li720\sl276\slmult1\i\f0 intersection\i0  is an operation that yields elements that are common to 2 or more sets. For \{1,2,3\} and \{2,3,4\}, the intersection is 2 and the union is \{1,2,3,4\}\f1\par
+\i\f0 union\i0  an operation where 2 or more sets are combined to make a unique set of all numbers.\f1\par
+
+\pard\sl276\slmult1\par
+\f0 Function Basics\f1\par
+
+\pard\fi720\sl276\slmult1\i\f0 function\i0  in computer science means an executable statements\f1\par
+\i\f0 arity\i0  the number of arguments a function takes\par
+\par
+\f1\par
+
+\pard\sl276\slmult1\b\f0 DATABASES!!!\b0\f1\par
+\f0 a database is structured collection of data (all day, err day Jurnell promises). Examples are lists, files (CSV, XML, etc), keyboards (because each key maps to a value) because you can sort it and put it into structure.\f1\par
+\f0 Databases are differentiated by how it\rquote s organized. \f1\par
+\f0\tab Relational\f1\par
+\f0\tab Document - MongoDB. JSON\f1\par
+\f0\tab Columnar - \f1\par
+\f0\tab Graph - Neo4J, social graph Facebook has, \f1\par
+\f0\tab\f1\par
+\f0 In a database, cardinality is the number of rows and arity is the number of columns.\f1\par
+\par
+\f0 Tools to help model:\f1\par
+\f0 attributes - they have to be independent of one another. They have orthogonality. Because sets are inherently unique, their attributes must be unique.\f1\par
+\f0 the domain - \cf2\highlight3  all the values which a {\cf4{\field{\*\fldinst{HYPERLINK "https://en.wikipedia.org/wiki/Data_element"}}{\fldrslt{\ul\cf5\cf5\ul data element}}}}\f0\fs22  may contain\cf1\highlight0\f1\par
+\f0 range - the output of function\f1\par
+\par
+\f0 Model Relationships\f1\par
+\f0 one to one - an author can have only one SSN. Each SSN only goes with one author. It\rquote s a unique identifier that makes a unique pairing.\f1\par
+\f0 one to many - a published work can have only one citation style. a citation style can be used with many published works. It\rquote s a instance to category.\f1\par
+\f0 many to many - an author can have multiple books. A book can have many authors.\f1\par
+\par
+\f0 There is concept/entity vs. instance/example \f1\par
+\par
+\f0 Composition - if you take away a piece of an element, then it\rquote s still that thing.\f1\par
+\f0 Aggregation - if you take away a pieces of an element ceases to be that element. \f1\par
+\par
+\par
+\f0 The slow implementation is to have each query check every cell to see if it meets that criteria. This is called 0(n), Big O notation. This is still faster than 0(log n), which is an even slower function graphically). Faster than both are the 0(n squared) which is creating nested while loops \f1\par
+\par
+\f0 To avoid visiting every single node when making a query, you can make your structure into a tree such as a hash table and go through ever smaller categories. Binary trees insert in a specific way and they have a root with two branches that compare two decisions. You can also go through a binary tree by breadth-first search or depth-first search.\f1\par
+\par
+\f0 recursive function is a function that calls itself. Instead of simply returning a calculation, the calculation points to a duplicate of itself going through the calculation as many times as it needs.  For example, the Fibonacci sequence with f(n+1) + f(n-1) in which the arguments are very similar to itself or factorials n!\f1\par
+\par
+\f0 The same thing can be said with branches of a tree. Each decision of a tree is basically performing the same operation as the one before it in order to decide where to go next. The base step is the last step where it stops calling itself. The entire function will go through all its child functions and once all of them gets completed, then it will provide you the answer.\f1\par
+\par
+\f0 Selection Sort:\f1\par
+\f0 Example: 8, 17, 4, 2, 11, 6\f1\par
+\f0 -selects the first item, compares it with the rest and finds the smallest value it can compare to and it switches the item. So starts with 8, then it goes through the whole list and sees that 2 is the smallest and switches the two number places. Then list becomes 2, 17, 4, 8, 11, 6, thus 2 is started. Then it does this again finding the next smallest is 4 in the whole list and reorders. So now it\rquote s 2, 4, 17, 8, 11, 6. So with 6, then it would be 2, 4, 6, 8, 11, 17.\f1\par
+\par
+\f0 Merge Sort:\f1\par
+\f0 Example:  8, 17, 4, 2, 11, 6\f1\par
+\f0 -You split the list and sort them separately. And then you merge them together when you're done with the pieces.??\f1\par
+\f0 -First, you draw an imaginary line through the center so you have two lists 8,17,4 and 2,11,6. -Now, slice it again, so 8 and 17, 4 AND 2 and 11,6. \f1\par
+\f0 -Now sorting becomes pretty trivial. For example, 8 will just be 8. Between 17 and 4, 4 comes before 17. So altogether you have 8 AND 4,17 AND 2 AND 6,11.\f1\par
+\f0 -Then you compare chunks with each other. Between 8 and 4, 4 is first. So the first merged chunk will be 4, 8,17.  Then for the second merged chunk you compare 2 with 6,11 to become 2, 6, 11. \f1\par
+\f0 -Then compare 17 with the whole second chunk to become 2,6,11,17 to merge.\f1\par
+\f0 -Then compare 8 with the whole second chunk to become 2, 6, 8, 11, 17 to merge.\f1\par
+\f0 -Then compare 4 with the whole second chunk to become 2, 4, 6, 8, 11, 17.  The end.\f1\par
+\par
+\f0 These recursive functions all happens simultaneously.\f1\par
+\par
+\f2\tab\f3\u8594?\f2  Resource:  {\cf0\f0{\field{\*\fldinst{HYPERLINK https://www.youtube.com/watch?v=EeQ8pwjQxTM }}{\fldrslt{https://www.youtube.com/watch?v=EeQ8pwjQxTM\ul0\cf0}}}}\cf0\f0\fs22\par
+\cf1\f1\par
+\par
+\b\f0\lang9 Garbage Collectors:\b0\f1\par
+\f0 -part of language that cleans up any objects that aren\rquote t being used to make the program more efficient and frees up memory.\f1\par
+\f0\tab Mark and Sweep - It\rquote s a stop the world (freezes the program for a moment) to mark all the variables that are being used and follow their relationships and marks them. Then it goes back and sweeps away all the items that are not marked.\f1\par
+\f0\tab Relational Counting - while an item is being created, it keeps track of the number of things being pointed to it. When an item has a zero number of things pointing to it, then the collector deletes it on the fly. This is a more sophisticated sweeping methods, but more prone to mistakes, too.\f1\par
+
+\pard\sl276\slmult1\qc\par
+
+\pard\sl276\slmult1\par
+\b\f0\fs24 Passwords\b0\f1\fs22\par
+\f0\fs24 In the database where users info is stored in the database, there is nothing called password. Secure means that it takes nothing less than brute computational force to get the password, you will have to try one at a time and you increase the time, energy, and efficiency a hacker must take to get the passwords.\f1\fs22\par
+\par
+\f0\fs24 encrypted keys -- the hash can be reversed by undoing those operations to get the password as opposed to one-way hashes that cannot be reversed.\f1\fs22\par
+\par
+
+\pard\fi-810\li900\sl276\slmult1\f0\fs24 Obfuscation Techniques:\f1\fs22\par
+\f0\fs24 Entropy-write a complex predictable pattern that generates a new password hash\f1\fs22\par
+\f0\fs24 pepper-a secret code coming from your application code that no one but your application knows it. So before it enters the database, the letters get added. So now a hacker has to build a custom computation that deals with computing the custom peppers to get password.\f1\fs22\par
+\f0\fs24 Salting - sprinkle dumb letters to obfuscate the pattern. You can use a timestamp to generate a unique number (like epoch time). Each person now has their very own salt. So the hacker can\rquote t just loop through the whole database; he will have to calculate a loop for each person as well.\f1\fs22\par
+\f0\fs24 Armor - the password is flanked by lettering that is very similar to the password on either side.  Example: BBBBhashBBBB\f1\fs22\par
+
+\pard\sl276\slmult1\par
+\f0\fs24 Where to go to even know about security:\f1\fs22\par
+\f0\fs24 -Know about firewalls, and how IP addresses work work, port scanning,\f1\fs22\par
+\f0\fs24 -intro to number theory for basics and cryptography\f1\fs22\par
+\f0\fs24 -know your operating system. who some of the users are and gauging who\rquote s in it. Usually -hackers want to take your computer not for your info, but to use it as a zombie for another larger attack.\f1\fs22\par
+\f0\fs24 -wireshark\f1\fs22\par
+\f0\fs24 -n-map\f1\fs22\par
+\f0\fs24 -understand TCP/IP\f1\fs22\par
+\par
+\par
+\b\f0\fs24 JASON ORENDORFF!!!! at the Library\b0\f1\fs22\par
+{\cf0\f0\fs24{\field{\*\fldinst{HYPERLINK https://jorendorff.github.io/hackday/2012/library/ }}{\fldrslt{https://jorendorff.github.io/hackday/2012/library/\ul0\cf0}}}}\f0\fs24  \f1\fs22\par
+\f0\fs24 algorithm - plan for how to solve a problem\f1\fs22\par
+\f0\fs24 data structure - the shape of the data in your program. For example, linked lists, tree, array, dictionary, document. With an array its memory efficient but its harder to move the data. Linked lists are easy to move things around.\f1\fs22\par
+\f0\fs24 -within a sorted array, you can do less than or greater than to do a binary search where you randomly pick a book, see if it is greater than or less than the dewey number, and then throw out the half that would not contain this book. And then do it again, and again, until you find your book. A binary search is optimal for sorted array.\f1\fs22\par
+\f0\fs24 -For SQL servers, what is slowest is unloading the disk, such as the walking part in a library. So SQL has the equivalent of signs (index) so that it doesn\rquote t have to open each table (go to each shelf). \f1\fs22\par
+\f0\fs24 -Insertion sort is the fastest for small arrays. For big arrays, it would be time-consuming to do binary search for each book and it\rquote s consuming to move all the books or bytes over to make room.\f1\fs22\par
+\f0\fs24 -Bucket sort is better for big arrays. There are large sections or buckets where they are presorted by larger categories. And then bucket sort again to sort the individual categories. So keep doing bucket sort until they are small enough to do insertion sort.\f1\fs22\par
+\f0\fs24 -For largish arrays, they can also use merge sort. You half and half and half the array until you can do insertion sort, then you merge two arrays together again and again until it is sorted. Problem is with gigantic arrays you will have to have three arrays to keep in memory, the two arrays you want to merge and the merged array. So you can do quick sort.\f1\fs22\par
+\f0\fs24 -Quick sort is kind of like merge sort, but in the beginning the method takes three random points out of the array and picks the one in the middle, hoping it\rquote s representative of the middle of the whole array. \f1\fs22\par
+\f3\fs24\u8594?\f2  Link to his 2001 Obfuscated C winning entry:  {\cf0\f0{\field{\*\fldinst{HYPERLINK http://www.ioccc.org/2001/jason.c }}{\fldrslt{http://www.ioccc.org/2001/jason.c\ul0\cf0}}}}\f0\fs24 . Extra points if you know what this program actually does.\f1\fs22\par
+\lang9\par
+\par
+\b\f0 Linked Lists:\b0\f1\par
+\f0 arrays - predefined, homogenous, with a fixed length and size.\f1\par
+\f0 -when an array gets created, it uses a chunk of memory to know the address of each value.\f1\par
+\f0 array lists - dynamically allocated, homogenous values. Under the hood, a list is actually an array. Say we add 10 items to the list using list.Add(). When we add the 11th item, there is no more space in this array. It creates a new array and increase the size of the array by a percentage depending on what you plan to put there. Then, it copies each item from the old array in the beginning, puts it into the new one, along with the 11th item. \f1\par
+\f0 -in a single linked lists, you can go through a list to the next item. You can only go forward to go through a list.\f1\par
+\f0 -in order to delete an item you can make that node point to a different thing, thus deleting the value that doesn\rquote t have anything pointed to it.\f1\par
+\f0 -in a double linked lists, you have a list that point to the next item using .Next() with a reference to your last node. In addition, you have a reference that also points to the item previous to it. This enables you to go forward AND backwards. \f1\par
+\f0 -Changing, modifying, adding and deleting is much cheaper in a linked list as opposed to an array, since in an array, if something gets deleted, each item will need to be shifted.\f1\par
+\par
+\par
+\b\f0 Algorithm Complexity: Making Databases Fast\b0\f1\par
+{\cf0\f0{\field{\*\fldinst{HYPERLINK https://github.com/elizabrock/software-development-curriculum/blob/master/computer-science/algorithms/introduction-to-algorithmic-complexity.md }}{\fldrslt{https://github.com/elizabrock/software-development-curriculum/blob/master/computer-science/algorithms/introduction-to-algorithmic-complexity.md\ul0\cf0}}}}\f0\fs22  \f1\par
+\f0 -Big-O are general algorithm in which the thing that you are limited by and that you want to constrain yourself to when you are creating a database structure.\f1\par
+\f0 -Sometimes, you have very efficient algorithm that makes a huge data structure that takes time at first, but then becomes super fast. Or you have an algorithm that doesn\rquote t take up much memory, but is rather slow. The size and composition of data also affects what algorithm you want.\f1\par
+\f0 -In order to determine which class of algorithm that you are using, you look at how they behave in terms of the amount of input that is given (n) and then simplify it down to make the comparison. We use specifics to determine which general algorithm to use.\f1\par
+\par
+\b\f0 Stacks and Queues:\b0\f1\par
+\f2 -a stack is a last in, first out data structure, like a stack of plates. Stacks are secretly singly-linked lists. So when adding, just a new node as 0(1) as opposed to an array in which you add to first node, everything else must move over 0(n) \f3\u8592?\f2  less efficient. In stacks and queues, its very good at push and pop where you change the first or last node, but you can\f4\rquote\f2 t access what\f4\rquote\f2 s in the middle.\f1\lang9\par
+\par
+\b\f0 Numbers:\b0\f1\par
+\b\f0 base 10\b0\f1\par
+\b\f0 base 2 is binary\b0  1 + 1 = 10 which is 2\f1\par
+\b\f0 base 8 is octal \b0 7 + 1 = 0x10\f1\par
+\b\f0 base 16 is hexadecimal \b0  \f1\par
+\f2 -Ruby the interpreter \f3\u8594?\f2  C and compiles \f3\u8594?\f2  Assembly which is almost limited english that talks to hardware \f3\u8594?\f2  hardware.\f1\par
+\f0\lang9 -registers are memory cells and assembly is used to give commands telling how and what things are stored in them. In assembly, you tell values where to go in memory and what exactly to do.\f1\par
+\f0 -If we were writing C, it compiles down into assembly particular to which hardware that you have in order to run your code.\f1\par
+\f0 -That is why in C Sharp, you have fixed lengths. It knows exactly where you stored them, so it can go through it really fast. \f1\par
+\par
+\par
+\par
+
+\pard\sl276\slmult1\qc\par
+\b\f0\fs24\par
+}
+ 

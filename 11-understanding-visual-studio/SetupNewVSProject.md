@@ -20,3 +20,5 @@
 
 
 => Add, commit, and push at will
+
+Get the documentation of a method by moving cursor to function and hitting F1 or fn + F1
