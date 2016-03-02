@@ -85,12 +85,11 @@ public static void RegisterRoutes(RouteCollection routes)
   * `Pets/Search/1`
   * `Project/Destroy/2`
 * The **{action}** parameter of a route corresponds with a specific method on an MVC controller
-  * Examples:
+  * Example:
     * Default MVC "About" page url:  `./Home/About` where url syntax is:
       *	"Home" = prefix of controller class (by convention), via routes
       *	"About" = controller action, an instance method; returns an "Action Result" that refers to the view that will get data injected, as part of .NET's MVC package.  
       * Works as a regular method for testing and utilities.
-  * Home/User/12   =>   Gets the page of the user with the id of 12
 
 #### RESTful APIs (convention)
 * **REST** (REpresentational State Transfer) is another set of guidelines outlining how resource endpoints are defined and behaved
