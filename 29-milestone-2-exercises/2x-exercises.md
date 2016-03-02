@@ -7,7 +7,7 @@
 ### Learning SQL through Doing  
 * https://github.com/jcockhren/learning-sql
 
-## Mid-Capstone Project (per Eliza?)
+## Mid-Capstone Project (per Eliza)
 * Must be something you can show your employer
 * Must use a database, as in storing local data
   * You must perform all the database CRUD (Create, Read, Update, Delete) operations

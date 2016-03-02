@@ -22,7 +22,6 @@ Walk through exercises re: ALL the intricacies of C# language
 * Shorten exercise, to some, limited number of Koans assigned
   * e.g. methods, strings, arrays, inheritance?, lambdas?
 
-
 ## Linked Lists Exercise
 Practice C# coding while also learning LinkedList data structure.  Has accompanying visualization window which supports visualizing what code execution is actually doing with the structures (cool!)
 * https://github.com/elizabrock/CSharpSinglyLinkedLists
@@ -40,7 +39,7 @@ Major exercise / assignment. [Midterm Project ?]
 * Probably needs more detailed instructions
 
 ## Simple Calculator Project
-Well-defined console-based exercise [Group Project ?]
+Well-specified console-based exercise [Group Project ?]
 https://github.com/jcockhren/simple-calculator
 * After Chunk 4 go ​*back*​ to the README and be sure you implement the rest of the required features.  
 * If finished early, then try:
