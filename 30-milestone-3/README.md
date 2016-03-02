@@ -1,7 +1,19 @@
-## Milestone 3:  Building an API
+## Milestone 3:  Building a RESTful Web API
 #### Topics (to be fleshed out over time)
 * Web API
 * Routing
+
+##### 
+* With APIs, clients (e.g. a browser or phone app) make AJAX requests to a URI to interact with data. This is most naturally implemented by a server side application returning HTTP responses containing JSON. This is different from a traditional MVC-style process in two ways:
+  * The client is only requesting data and not an entire view/HTML page
+  * The server only exposes data, usually in the form of JSON (could be XML)
+
+* Why? In the modern age of the internet, clients come in many shapes and sizes, and the old model of server-returning-HTML to every device no longer worked well. Clients can now implement the presentation in their own way (cf. the Facebook app for iOS versus facebook.com in your browser) and simply interact with the data by itself. This allows the front end clients and back end service to be more decoupled - the back end resource does not care or need to know which kind of client is requesting data as long as it is authorized to do so. This accordingly enforces the separation of concerns.
+  * E.g.: while the profile page in the facebook iOS app looks different from the profile page on facebook in a browser, both issued the same request for profile data for a given user. The clients render the data in their views differently but received the same underlying object. 
+
+* Since the back end resource is only presenting and handling data requests, the front end clients become more responsible for determining how and where the data is rendered in a given view. This gives greater flexibility when designing clients for different platforms and removes the responsibility of building and managing views from the server. 
+
+* In order to make as generic an interface as possible, most Web APIs implement to some degree the conventions of REST. This aides in providing a consistent system of interacting with data. 
 
 
 ###### Sonda's Notes re: APIs in .NET:
