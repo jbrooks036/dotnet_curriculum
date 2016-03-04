@@ -1,4 +1,4 @@
-## 07 - .NET Overview
+## .NET Overview
 
 ##### [including active coding of class project]
 

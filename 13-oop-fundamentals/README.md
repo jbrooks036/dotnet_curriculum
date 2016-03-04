@@ -7,7 +7,7 @@
 #### Sonda's Notes on Object Oriented Principles
 * it exists because this is how humans understand the world.
 * every object has an attribute. An attribute is a set of orthogonal features used to uniquely identify an object.
-* Four Main Principles (memorize the things	!):
+###### Four Main Principles (memorize the things	!):
   * **Inheritance** → the receiving of properties from a parent
   * **Polymorphism** → Jurnell’s Definition: you can solve the same problem in many different ways, meaning there is no one right answer, but many possible ones that leads to the same solution. Eliza’s Definition: a type whose values and properties are similar to other types // the functionality you have in the base class can be propagated through the children
   * **Encapsulation** → packaging code into containers in which others can interact with what’s inside this containers through specific access ways.
