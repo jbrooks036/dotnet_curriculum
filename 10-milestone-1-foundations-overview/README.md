@@ -5,15 +5,15 @@
 * OOP Fundamentals
 * Unit Testing with VS
 * C# Fundamentals
+  * Vocabulary and Punctuation
+  * Koans (some, limited number)
+    * methods, strings, arrays, inheritance?, lambdas?
 * .NET Ecosystem - discussion
 * Design Patterns
 
-#### Exercises
-* Koans (some, limited number)
-  * methods, strings, arrays, inheritance?, lambdas?
+#### Other Potential Exercises
 * Cheers?
-* Simple tests in VS
 * Mathgician
 
-#### Group Project
-Simple Calculator
+#### Group Project?
+* Simple Calculator
