@@ -36,9 +36,7 @@ Database is often abbreviated to DB.
 * Add Connection makes a connection and then new Object.Context, realizes there is not a database yet, and then makes a database.
 * Create SQL DB - creates a new database first, thus the database is empty for while, and then the code runs to add/delete/and such.
 
-
-
-
+* N.B. There's lots more of Sonda's notes on DBs in the .rtf file in "Other Resources" folder.
 
 ### Outline of Databases Topics (per Eliza?)
 *	Intro to Databases
@@ -58,7 +56,3 @@ Database is often abbreviated to DB.
   * Sprocs
   * Views
   * Query Optimization
-
-### Jurnell may have materials for teaching:
-  * Basics of Databases/Modeling
-  * Learning SQL

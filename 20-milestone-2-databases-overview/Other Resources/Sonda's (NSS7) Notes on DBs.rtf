@@ -1,5 +1,5 @@
 {\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Georgia;}{\f1\fnil\fcharset0 Arial;}{\f2\fnil\fcharset0 Trebuchet MS;}{\f3\fnil\fcharset0 Nova Mono;}{\f4\fnil\fcharset1 Cambria Math;}{\f5\fnil\fcharset0 Calibri;}{\f6\fnil\fcharset2 Symbol;}}
-{\colortbl ;\red0\green0\blue0;\red51\green51\blue51;\red255\green255\blue255;\red0\green0\blue255;\red65\green131\blue196;\red102\green102\blue102;\red119\green119\blue119;\red37\green37\blue37;\red11\green0\blue128;\red17\green85\blue204;\red163\green21\blue21;}
+{\colortbl ;\red0\green0\blue0;\red51\green51\blue51;\red255\green255\blue255;\red0\green0\blue255;\red65\green131\blue196;\red102\green102\blue102;\red119\green119\blue119;\red37\green37\blue37;\red11\green0\blue128;\red17\green85\blue204;}
 {\*\generator Riched20 6.3.9600}{\*\mmathPr\mmathFont4\mwrapIndent1440 }\viewkind4\uc1 
 \pard\sl276\slmult1\qc\cf1\b\f0\fs28\lang9 Sonda's NSS7 Classroom Notes on Databases \b0\f1\fs22\par
 
@@ -156,14 +156,8 @@
 \cf8\highlight3\f3\fs24\lang9\tab\f4\u8594?\f3  What kind of data?\cf1\highlight0\f1\fs22\par
 \cf8\highlight3\f3\fs24\lang9\tab\f4\u8594?\f3  What kind of durability?\cf1\highlight0\f1\fs22\par
 \lang9\par
-\cf8\highlight3\b\f0\fs24 Document Oriented vs Relational Database\cf1\highlight0\b0\f1\fs22\par
-\cf8\highlight3\f3\fs24 Relational \f4\u8594?\f3  Stored very similar to how data is stored in, say, excel.  In tables or a grid that relate to other tables or grids.  Instead of storing all the data in one place, you split it up.  For instance:  Book grid with title / author / year stored in the table.  Another grid with book #, chapter, and chapter text stored there.\cf1\highlight0\f1\fs22\par
-\lang9\par
-\cf8\highlight3\f3\fs24 Document Oriented \f4\u8594?\f3  Like a json blob.  In this example, the whole book is stored here.  In document oriented, there is no schema.\cf1\highlight0\f1\fs22\par
-\lang9\par
-\cf8\highlight3\f0\fs24 Eliza:  At least 95% of the time, you want a relational database.  But in the modern age, you don\rquote t have to choose between one or the other.  Things like Postgres allow for storing document oriented stuff in a relational database.  We will be focusing on relational databases.\cf1\highlight0\f1\fs22\par
-\par
-\par
+\cf8\highlight3\b\f0\fs24\par
+\cf1\highlight0\b0\f1\fs22\par
 \b\f0 Import SQLite File:\b0\f1\par
 \f0 -download sqlite task manager\f1\par
 \f0 -save the northwind database on your computer\f1\par
@@ -208,6 +202,28 @@
 
 \pard\sl276\slmult1\par
 \highlight3\f0\fs24 Example 2: SELECT{{\field{\*\fldinst{HYPERLINK "http://products.id/"}}{\fldrslt{\ul\cf4\cf4\ul  }}}}{\cf10\f0\fs24{\field{\*\fldinst{HYPERLINK "http://products.id/"}}{\fldrslt{\ul\cf4\cf4\ul products.id}}}}\cf1\ulnone\f0\fs24 ,{{\field{\*\fldinst{HYPERLINK "http://products.name/"}}{\fldrslt{\ul\cf4\cf4\ul  }}}}{\cf10\f0\fs24{\field{\*\fldinst{HYPERLINK "http://products.name/"}}{\fldrslt{\ul\cf4\cf4\ul products.name}}}}\cf1\ulnone\f0\fs24  FROM order_details JOIN products ON  order_details.product_id ={{\field{\*\fldinst{HYPERLINK "http://products.id/"}}{\fldrslt{\ul\cf4\cf4\ul  }}}}{\cf10\f0\fs24{\field{\*\fldinst{HYPERLINK "http://products.id/"}}{\fldrslt{\ul\cf4\cf4\ul products.id}}}}\cf1\ulnone\f0\fs24  WHERE order_details.order_id = 10250\highlight0\f1\fs22\par
+\par
+\b\f0 DATABASES!!!\b0\f1\par
+\f0 a database is structured collection of data (all day, err day Jurnell promises). Examples are lists, files (CSV, XML, etc), keyboards (because each key maps to a value) because you can sort it and put it into structure.\f1\par
+\f0 Databases are differentiated by how it\rquote s organized. \f1\par
+\f0\tab Relational\f1\par
+\f0\tab Document - MongoDB. JSON\f1\par
+\f0\tab Columnar - \f1\par
+\f0\tab Graph - Neo4J, social graph Facebook has, \f1\par
+\f0\tab\f1\par
+\f0 In a database, cardinality is the number of rows and arity is the number of columns.\f1\par
+\par
+\f0 Tools to help model:\f1\par
+\f0 attributes - they have to be independent of one another. They have orthogonality. Because sets are inherently unique, their attributes must be unique.\f1\par
+\f0 the domain - \cf8\highlight3  all the values which a {\cf9{\field{\*\fldinst{HYPERLINK "https://en.wikipedia.org/wiki/Data_element"}}{\fldrslt{\ul\cf4\cf4\ul data element}}}}\f0\fs22  may contain\cf1\highlight0\f1\par
+\f0 range - the output of function\f1\par
+\par
+\f0 Model Relationships\f1\par
+\f0 one to one - an author can have only one SSN. Each SSN only goes with one author. It\rquote s a unique identifier that makes a unique pairing.\f1\par
+\f0 one to many - a published work can have only one citation style. a citation style can be used with many published works. It\rquote s a instance to category.\f1\par
+\f0 many to many - an author can have multiple books. A book can have many authors.\f1\par
+\par
+\par
 \par
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\par
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\par
@@ -11592,37 +11608,8 @@ adad9cadad94a5ad94a5a59cadad94a5a594a5a58c9ca594a5a58c9ca594a5a5849c9c849c9c7b
 \par
 \par
 \par
-\b\f0 Making your Project Entity-Friendly:\b0\f1\par
-\f0 -Go the project and right-click to Add > Manage Nuget > Search and install EntityFramework.\f1\par
-\f0 -Make a class called ObjectContext.cs within the ProjectName namespace and use the interface DbContext with a semicolon. Make another class called Event.cs\f1\par
-\f0 -Add the using System.Data.Entity at the top and Using ProjectName\f1\par
-\f0 -Within ObjectContext.cs add the property DBSet and make it public, that allows you to pull a set of entities from the database. In SQL, there are the same as query sets.\f1\par
-\f0 -Within the Object.cs add a field ObjectID which is an observable collection that represents the actually data(??)\f1\par
-\f0 -Right-Click Data Connection from Server Explorer. Now add a Connection > Server Name .\\SQLEXPRESS > Under "Connect to database" add ProjectName.ObjectContext. You can test it and then add it. It should populate in Server Explorer with tables, views, etc.\f1\par
-\f0 -Technically, the connection belongs in the Object class, but we\rquote ll move it to the mainwindow.cs because it\rquote s where the program begins. So we\rquote ll move the observable collection line here. So when the window starts up, it makes a new instance of the Objects collection. \f1\par
-\par
-\f0 How do I write a unit test to see whether the connection to database is working?\f1\par
-\f0 -Make a TestPersistance.cs in your project.\f1\par
-\f0 -Go back and add (or prep) a line to the database using db.Add in the MainWindow.cs. We\rquote re doing a Code First technique where we first write the code to make .NET generate the database for us.\f1\par
-\f0 -In reality, the mainwindow should not care about data events. There should be a class for business logic (our main window) and interacting with the queries of the database (DAL such as LINQ or queries or accessing the data). So we should have a level of abstraction that decouples the two, so we have a repository in the middle. \f1\par
-\f0 -Lazy Evaluation - allow the platform underneath you to control data access for you. For example, the LINQ query is not evaluated until the foreach gets evaluated. So you can make as many queries as you want and then evaluate them.\f1\par
-\par
-\f0 -We make a repository to handle the LINQ logic, and one popular pattern is to generalize it such that your tests are actually querying a list and the list happens to have plugins to access your database. In this way, you make an interface such that you can use a different database type if you wish later, and the rest of the program does not have to worry about what that is because the interface ensures that the data and its methods get handled the same way no matter what data type it is throughout your whole program.\f1\par
-\f0 -So you can create an interface such as IObjectRepository.cs within a new folder called Repository. In this interface, you must add the names for the methods that you want used for any class that is using this interface such as Add, Delete, etc.\f1\par
-\f0 -Next we can create an ObjectRepository.cs class and use interface as semicolon. If you click on option > Implement Interface, then it will repopulate the page with all those empty methods that the interface requires.\f1\par
-\f0 -If you want something back that you can do stuff with, you will use IQueryable to query the data\f1\par
-\f0 -a predicate is a statement that filters your queryable. It\rquote s a collection that you can run a query through.\f1\par
-\par
-\par
-\f0 -now with an interface and ObjectRepository.cs class in place, you can make a ObjectRepositoryTest.cs to test these methods that are in your ObjectRepository.cs class. The first things you can do in the class is implement a constructor to open your database\f1\par
-\f0 -##CSharp is the IRC Channel where all the C sharp nerds hang out.\f1\par
-\par
-{\cf0\f0{\field{\*\fldinst{HYPERLINK https://msdn.microsoft.com/en-us/library/bb386941%28v=vs.110%29.aspx }}{\fldrslt{https://msdn.microsoft.com/en-us/library/bb386941%28v=vs.110%29.aspx\ul0\cf0}}}}\f1\fs22\par
 
-\pard\sl252\slmult0\f0\fs20 DataContext db = \cf4 new\cf1  DataContext(\cf11 @"c:\\Northwnd.mdf"\cf1 );\fs22  \par
-\par
-\par
-\par
+\pard\sl252\slmult0\f0\par
 \par
 
 \pard\sl276\slmult1\b\fs24 Databases:\b0\f1\fs22\par
@@ -11643,29 +11630,8 @@ adad9cadad94a5ad94a5a59cadad94a5a594a5a58c9ca594a5a58c9ca594a5a5849c9c849c9c7b
 \par
 \f0\fs24 - \ldblquote Unit of Work\rdblquote  and \ldblquote Repository Pattern\rdblquote  are two patterns that you need to know to work with .Net database structures.\par
 \par
-\b\fs22 DATABASES!!!\b0\f1\par
-\f0 a database is structured collection of data (all day, err day Jurnell promises). Examples are lists, files (CSV, XML, etc), keyboards (because each key maps to a value) because you can sort it and put it into structure.\f1\par
-\f0 Databases are differentiated by how it\rquote s organized. \f1\par
-\f0\tab Relational\f1\par
-\f0\tab Document - MongoDB. JSON\f1\par
-\f0\tab Columnar - \f1\par
-\f0\tab Graph - Neo4J, social graph Facebook has, \f1\par
-\f0\tab\f1\par
-\f0 In a database, cardinality is the number of rows and arity is the number of columns.\f1\par
-\par
-\f0 Tools to help model:\f1\par
-\f0 attributes - they have to be independent of one another. They have orthogonality. Because sets are inherently unique, their attributes must be unique.\f1\par
-\f0 the domain - \cf8\highlight3  all the values which a {\cf9{\field{\*\fldinst{HYPERLINK "https://en.wikipedia.org/wiki/Data_element"}}{\fldrslt{\ul\cf4\cf4\ul data element}}}}\f0\fs22  may contain\cf1\highlight0\f1\par
-\f0 range - the output of function\f1\par
-\par
-\f0 Model Relationships\f1\par
-\f0 one to one - an author can have only one SSN. Each SSN only goes with one author. It\rquote s a unique identifier that makes a unique pairing.\f1\par
-\f0 one to many - a published work can have only one citation style. a citation style can be used with many published works. It\rquote s a instance to category.\f1\par
-\f0 many to many - an author can have multiple books. A book can have many authors.\f1\par
-\par
-\par
 
-\pard\sl252\slmult0\par
+\pard\sl252\slmult0\f1\fs22\par
 
 \pard\sl276\slmult1\par
 }
