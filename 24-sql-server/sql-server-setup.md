@@ -41,6 +41,3 @@
 6. Click "Ok"
 7. Click "Connect"
 8. If you see "YOURUSERNAME/SQLEXPRESS" in the "Object Explorer" sidebar, you have won.
-
-## Learning SQL through Doing  
-* https://github.com/jcockhren/learning-sql

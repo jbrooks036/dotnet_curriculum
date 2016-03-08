@@ -1,6 +1,6 @@
 # Relational Databases
 
-###### Everything here is from Sonda's notes
+###### Everything here following is from Sonda's notes
 
 #### Document Oriented vs Relational Database
   * **Relational database**
@@ -13,7 +13,7 @@
     * Like a json blob.  
     * In document oriented, there is no schema.
 
-  * **Eliza says**
+  * **Practical Differences**
     * At least 95% of the time, you want a relational database.  But in the modern age, you don’t have to choose between one or the other.  Things like Postgres allow for storing document oriented stuff in a relational database.  We will be focusing on relational databases.
     * We have currently been thinking about storing data in a document oriented way (think JSON).  We will be moving towards Tables as the overriding metaphor, as stored data will be kept in a tabular way (or at least mimic this structure).
 
@@ -35,6 +35,8 @@
 	* Typically in databases we almost always have an ID column, and they are typically sequential.
 
 #### Talking to a Database
+
+###### SQL Statements
  * Basic Structure of a SQL statement:
 	`SELECT ______   
 	FROM ______
@@ -49,7 +51,29 @@
 ###### How to: Insert Rows Into the Database
   * https://msdn.microsoft.com/en-us/library/bb386941%28v=vs.110%29.aspx
 
-###### Joins
+###### How to: View your Table in your Database:
+  * Open Server Explorer > Click on your Database Connection > Tables > Right Click on ObjectName > Show Table Data
+
+###### How to: Delete your Database (in case you’re having connection errors):
+  * Open Microsoft SQL Server Management
+  * Click OK if that’s the Server you’re working with
+  * Click Database > Your Database > Right Click > Delete > Make sure close connection is checked.
+
+###### How to: Make a New Connection:
+  * Right-Click Data Connection from Server Explorer.
+  * Now add a Connection > Server Name .\SQLEXPRESS > Under Connect to database add ProjectName.ObjectContext (Or whatever your project name.ObjectContext).
+  * You can test it and then add it.
+  * It should populate in Server Explorer with tables, views, etc.
+
+###### How to:  Make a New Database First, then create a Connection:
+  * Right-Click Data Connection from Server Explorer.
+  * Now Create New SQL Server > Server Name .\SQLEXPRESS > Under Connect to database add ProjectName.ObjectContext.
+  * You can test it and then add it.
+  * It should populate in Server Explorer with tables, views, etc.
+  * Add Connection makes a connection and then new Object.Context, realizes there is not a database yet, and then makes a database.
+  * Create SQL DB - creates a new database first, thus the database is empty for while, and then the code runs to add/delete/and such.
+
+#### Joins
 * http://blog.codinghorror.com/a-visual-explanation-of-sql-joins/
 * With a join, you must specify how the table is joined using ON. Otherwise, you will get all the combinations possible of one table row matched with another table row.
   * **Inner Join** matches one table with another table row for row. If one row doesn’t have its pair on another table, it will be excluded. It will only show matching row pairs.

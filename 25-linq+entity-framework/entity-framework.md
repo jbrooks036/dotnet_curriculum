@@ -2,7 +2,7 @@
 
 * https://msdn.microsoft.com/en-us/data/ee712907
 
-###### N.B. Everything here is from Sonda's Notes, but not in the same order that she had them.  This file will need major review / checking / correction.
+###### N.B. Everything here is from Sonda's Notes, but not in the same order that she had them.  This file probably needs major review / checking / correction.
 
 ### Making your Project Entity-Friendly:
 * Go the project and right-click to Add > Manage Nuget > Search and install EntityFramework.
@@ -33,8 +33,7 @@
 * When you’re done, close your database connection with something like db.Close().
 * But programmers are awfully forgetful people, so they made something called a using to close the connection for you. You wrap all your database connection code within a using(). When that reaches the end of the code block, then it closes itself.
 
-
-### How do I write a unit test to see whether the connection to database is working?
+##### How do I write a unit test to see whether the connection to database is working?
 * Make a TestPersistance.cs in your project.
 * Go back and add (or prep) a line to the database using db.Add in the MainWindow.cs.
 * This is a Code First technique where we first write the code to make .NET generate the database for us.
@@ -49,6 +48,4 @@
 * A **predicate** is a statement that filters your queryable. It’s a collection that you can run a query through.
 * Now with an interface and ObjectRepository.cs class in place, you can make a ObjectRepositoryTest.cs to test these methods that are in your ObjectRepository.cs class. The first things you can do in the class is implement a constructor to open your database
 * **##CSharp** is the IRC Channel where all the C sharp nerds hang out.
-* How to: Insert Rows Into the Database
-  * https://msdn.microsoft.com/en-us/library/bb386941%28v=vs.110%29.aspx
 * `DataContext db = new DataContext(@"c:\Northwnd.mdf");`
