@@ -2,6 +2,7 @@
 
 ## Overview
 MVC, which stands for Model, View, Controller, is an architecture pattern for organizing software applications.  Each component manages a specific purpose, and serves to make your code more organized and modular.  In addition to defining the three components, MVC describes the actual relationship between the components.
+
 ###### Sonda's Notes
 * Difference between Web and Desktop apps:
   * On the web, there is the model view controller, there is the model( classes, and data interaction), view (html and css) and controller(the browser).
@@ -10,7 +11,6 @@ MVC, which stands for Model, View, Controller, is an architecture pattern for or
 * Tests
   * Models will have unit tests
   * Views have functional tests, behavioral tests
-
 
 ## Model
 
@@ -25,8 +25,8 @@ The Model serves as the central component. It's responsible for talking to the d
   * A SERVICE can act as a go between from controller to model to have its own business rules like Firebase does.
 
 ## View
-
 Views are the presentation layer for the MVC pattern.
+
 ###### Sonda's Notes
 View - gives us things to display. Renders data into usable form. HTML, JSON, etc turns the data that is useful to you as a consumer. It is responsible for translating it to the user. Presenters squishes data from all sorts of places and presents it to you (including JSON files).
 
@@ -36,8 +36,14 @@ A controller does exactly what its name implies. It serves as the hub of your ap
 ###### Sonda's Notes
 Controller - (aka router) talks between the model and view. Central hub of communication. User input is what motivates the controller to do things. This is the user’s browser with input and give replies. Controller will never interact with the data store. Typically there is a controller for each large concept.
 
-Opening up the newest version of MVC ASP.NET:
--You will go to the new project > Web > Web application. MVC 4 is a past version.
+
+#### What the heck are “business rules” and “business logic” in MVC?  (Per Sonda adn stackoverflow.com)
+* Business rules go in the model.
+* Example:
+  * Say you were displaying emails for a mailing list. The user clicks the "delete" button next to one of the emails, the controller notifies the model to delete entry N, then notifies the view the model has changed.
+  * Perhaps the admin's email should never be removed from the list. That's a business rule, that knowledge belongs in the model.
+  * The view may ultimately represent this rule somehow -- perhaps the model exposes an "IsDeletable" property which is a function of the business rule, so that the delete button in the view is disabled for certain entries - but the rule itself isn't contained in the view.
+* The model is ultimately gatekeeper for your data. You should be able to test your business logic without touching the UI at all.
 
 
 
