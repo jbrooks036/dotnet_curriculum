@@ -1,5 +1,7 @@
 # Repository Pattern  
 
+* “Unit of Work” and “Repository Pattern” are two patterns that you need to know to work with .Net database structures.
+
 * Business logic goes into Repository.
 * Controller will change over time.
 

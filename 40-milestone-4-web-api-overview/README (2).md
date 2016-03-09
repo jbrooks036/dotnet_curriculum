@@ -1,4 +1,4 @@
-## Milestone 3:  Building a RESTful Web API
+## Milestone 4:  Building a RESTful Web API
 #### Topics (to be fleshed out over time)
 * Web API
 * Routing

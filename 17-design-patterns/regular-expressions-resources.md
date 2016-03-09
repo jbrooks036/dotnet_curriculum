@@ -14,3 +14,10 @@
 
 ### 90 Minute Regex Tutorial
 * http://www.codeproject.com/Articles/9099/The-Minute-Regex-Tutorial
+
+### from Sonda's Notes
+####  Split using REGEX:
+* normally you don’t need regex if you are splitting by one character.
+   * For example mystring.Split(,) makes “Please, sir” would be “Please” “ sir” with spaces
+* if there are two characters you want to split it with, then you use regex.
+  * `var regex = new System.text.RegularExpressions.Regex(“, “)` so it would be “Please” “sir” without spaces

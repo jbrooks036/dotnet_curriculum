@@ -117,6 +117,10 @@
 \f0 one to many - a published work can have only one citation style. a citation style can be used with many published works. It\rquote s a instance to category.\f1\par
 \f0 many to many - an author can have multiple books. A book can have many authors.\f1\par
 \par
+\f0 There is concept/entity vs. instance/example \f1\par
+\par
+\f0 Composition - if you take away a piece of an element, then it\rquote s still that thing.\f1\par
+\f0 Aggregation - if you take away a pieces of an element ceases to be that element. \f1\par
 \par
 \par
 ### Outline of Databases Topics (per Eliza?)\par
@@ -134,9 +138,9 @@
 *\tab Joins\par
 *\tab Projects\par
 *\tab Overview of:\par
-  * Sprocs\par
-  * Views\par
-  * Query Optimization\par
+ \tab  * Sprocs\par
+ \tab  * Views\par
+\tab  * Query Optimization\par
 \b\f0\fs24 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\par
 \fs28\par
 \fs24 Indexing a Database:\b0\f1\fs22\par
@@ -165,11 +169,14 @@
 
 \pard\sl276\slmult1\f1\par
 \f0\fs24 view - a combination of tables that group together data.\f1\fs22\par
-\f0\fs24 functions take input and give output without changing global state. procedures are a set of things to do and don\rquote t have input and outputs where you can store the code as data. It\rquote s not a real good idea/practice to store procedures because there is no way of tracking it since it doesn\rquote t have inputs and outputs.\f1\fs22\par
-\f0\fs24 -mutations are changes that are made onto a database done by code. Then it will have a migration history.\f1\fs22\par
+\f0\fs24\par
+functions - take input and give output without changing global state. \par
 \par
-\f0\fs24 - \ldblquote Unit of Work\rdblquote  and \ldblquote Repository Pattern\rdblquote  are two patterns that you need to know to work with .Net database structures.\par
+procedures - are a set of things to do and don\rquote t have input and outputs where you can store the code as data. It\rquote s not a real good idea/practice to store procedures because there is no way of tracking it since it doesn\rquote t have inputs and outputs.\f1\fs22\par
+\f0\fs24\par
+-mutations are changes that are made onto a database done by code. Then it will have a migration history.\f1\fs22\par
 \par
+\f0\fs24\par
 
 \pard\sl252\slmult0\f1\fs22\par
 
