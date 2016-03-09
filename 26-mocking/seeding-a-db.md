@@ -6,13 +6,13 @@ Another way is to set an initializer for your database context that brings in da
 
 ### If you’ve done a migration:
 * If you go to your configuration.cs file you can make a Seed method that takes the EventContext. Within the method, you can say something like:
-
-  `protected override void Seed (WaitForIt.EventContext.context) {
-    context.Events.AddorUpdate` `<Model.Event>`
-    (n => n.Name,    // if there is an object of the same thing, to not add another one
-      new Model.Event { Name = “Jurnell’s Birthday”, Date = “10/05/2015”}
-      )}`
-
+```
+  protected override void Seed (WaitForIt.EventContext.context) {
+    context.Events.AddorUpdate<Model.Event>
+    (n => n.Name,    // if there is an object of the same thing, do not add another one
+     new Model.Event { Name = “Jurnell’s Birthday”, Date = “10/05/2015”}
+    )}
+```
 * This way works if you have done a migration already and you want to use configuration.cs within that folder in order to seed data.
 * Jurnell COMMITTED this example above to the WaitForIt project.
 * You also need to set `AutomaticMigationEnabled = true`, so that every time it builds it will seed the database.
@@ -21,7 +21,7 @@ Another way is to set an initializer for your database context that brings in da
 
 * You can create a **connection string** so that you have two databases, one for your production run and one for your test run:
 
- `public EventContext(): base(“NameofDatabase”){ }`
+ `public EventContext(): base(NameofDatabase){ }`
 
 * If you have a column (say, from a migration) and it's not part of the constructor, what happens?
   * If you want to add info to that column, you will have to change your constructor properties accordingly.
