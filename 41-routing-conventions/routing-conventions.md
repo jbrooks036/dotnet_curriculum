@@ -1,4 +1,5 @@
-# RESTful APIs (convention)
+# Routing Conventions
+
 * **REST** (REpresentational State Transfer) is another set of guidelines outlining how resource endpoints are defined and behaved
 * When writing a .NET Web API resource, the style of REST can help keep your controller methods focused and organized
 * The typical development process is to work on one model at a time.
@@ -23,6 +24,3 @@
 
 * Retrieving an individual assignment of that user could be:
   * (GET) students/43/assignments/2   
-
-#### If using third party API
-* Need to enable CORS on MVC App, to access `www.<Company1Name>.com` from `api.<Company2Name>.com`
