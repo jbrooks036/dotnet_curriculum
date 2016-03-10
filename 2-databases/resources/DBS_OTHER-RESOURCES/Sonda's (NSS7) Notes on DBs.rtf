@@ -38,8 +38,50 @@
 \highlight3\f0\fs24 From Wikipedia\highlight0\f1\fs22\par
 \cf4\highlight3\f0\fs24 In{{\field{\*\fldinst{HYPERLINK "http://en.wikipedia.org/wiki/Computer_science"}}{\fldrslt{\ul\cf5\cf5\ul  }}}}{\cf6\f0\fs24{\field{\*\fldinst{HYPERLINK "http://en.wikipedia.org/wiki/Computer_science"}}{\fldrslt{\ul\cf5\cf5\ul computer science}}}}\cf4\ulnone\f0\fs24 , ACID ({\cf6\i{\field{\*\fldinst{HYPERLINK "http://en.wikipedia.org/wiki/Atomicity_(database_systems)"}}{\fldrslt{\ul\cf5\cf5\ul Atomicity}}}}\i\f0\fs24 ,{{\field{\*\fldinst{HYPERLINK "http://en.wikipedia.org/wiki/Consistency_(database_systems)"}}{\fldrslt{\ul\cf5\cf5\ul  }}}}{\cf6\f0\fs24{\field{\*\fldinst{HYPERLINK "http://en.wikipedia.org/wiki/Consistency_(database_systems)"}}{\fldrslt{\ul\cf5\cf5\ul Consistency}}}}\cf4\ulnone\f0\fs24 ,{{\field{\*\fldinst{HYPERLINK "http://en.wikipedia.org/wiki/Isolation_(database_systems)"}}{\fldrslt{\ul\cf5\cf5\ul  }}}}{\cf6\f0\fs24{\field{\*\fldinst{HYPERLINK "http://en.wikipedia.org/wiki/Isolation_(database_systems)"}}{\fldrslt{\ul\cf5\cf5\ul Isolation}}}}\cf4\ulnone\f0\fs24 ,{{\field{\*\fldinst{HYPERLINK "http://en.wikipedia.org/wiki/Durability_(database_systems)"}}{\fldrslt{\ul\cf5\cf5\ul  }}}}{\cf6\f0\fs24{\field{\*\fldinst{HYPERLINK "http://en.wikipedia.org/wiki/Durability_(database_systems)"}}{\fldrslt{\ul\cf5\cf5\ul Durability}}}}\cf4\ulnone\i0\f0\fs24 ) is a set of properties that guarantee that{{\field{\*\fldinst{HYPERLINK "http://en.wikipedia.org/wiki/Database_transaction"}}{\fldrslt{\ul\cf5\cf5\ul  }}}}{\cf6\f0\fs24{\field{\*\fldinst{HYPERLINK "http://en.wikipedia.org/wiki/Database_transaction"}}{\fldrslt{\ul\cf5\cf5\ul database transactions}}}}\cf4\ulnone\f0\fs24  are processed reliably. In the context of {\cf6{\field{\*\fldinst{HYPERLINK "http://en.wikipedia.org/wiki/Database"}}{\fldrslt{\ul\cf5\cf5\ul databases}}}}\f0\fs24 , a single logical operation on the data is called a transaction. For example, a transfer of funds from one bank account to another, even involving multiple changes such as debiting one account and crediting another, is a single transaction.\cf1\highlight0\f1\fs22\par
 \par
-\cf4\highlight3\f0\fs24 Different databases treat different parts of ACID with various levels of respect.\cf1\highlight0\f1\fs22\par
+\cf4\highlight3\f0\fs24 Different databases treat different parts of ACID with various levels of respect.\par
 \par
+\b What are the types of databases?\par
+\b0\par
+
+\pard{\pntext\f6\'B7\tab}{\*\pn\pnlvlblt\pnf6\pnindent0{\pntxtb\'B7}}\fi-360\li720\sl276\slmult1 In this class, we will be focusing on relational databases. However, there are many different types of databases that are suited to different specialized purposes.\par
+{\pntext\f6\'B7\tab}There is no "perfect" database type. Different datasets demand different ways of storing and accessing that data. Many database management systems combine the properties of various types of databases. For example, PostgreSQL is primarily a relational database system, however it can act as document-oriented database, spatial database, and distributed database as needed.\par
+
+\pard\sl276\slmult1\par
+\ul Relational Databases\par
+
+\pard{\pntext\f6\'B7\tab}{\*\pn\pnlvlblt\pnf6\pnindent0{\pntxtb\'B7}}\fi-360\li720\sl276\slmult1\ulnone Relational databases are databases that are based on the relational model, in which all data is stored in tuples (ordered lists of elements) and relations.\par
+{\pntext\f6\'B7\tab}Relational database data is stored in tables with specific schemas (specifications of exactly what kind of data is stored) and relationships (between tables). Relational databases are particularly strong at storing and querying highly structured data that have rich relationships.\par
+{\pntext\f6\'B7\tab}Microsoft SQL Server, MySQL, Oracle and PostgreSQL are among the more famous relational database systems.\par
+
+\pard\sl276\slmult1\par
+\ul Object & Object-Relational Databases\par
+
+\pard{\pntext\f6\'B7\tab}{\*\pn\pnlvlblt\pnf6\pnindent0{\pntxtb\'B7}}\fi-360\li720\sl276\slmult1\ulnone Object databases store data in the form of serialized Objects, rather than relational (table-oriented) data. Object-Relational databases take a hybrid approach. They are oriented towards storing objects and program state from object-oriented languages.\par
+
+\pard\sl276\slmult1\par
+\ul Graph Databases\par
+
+\pard{\pntext\f6\'B7\tab}{\*\pn\pnlvlblt\pnf6\pnindent0{\pntxtb\'B7}}\fi-360\li720\sl276\slmult1\ulnone Graph databases are databases that store data based on graph data structures. They are particularly suited to storing graph-oriented data, such as computer networks and social network connections.\par
+
+\pard\sl276\slmult1\par
+\ul Document-oriented Databases\par
+
+\pard{\pntext\f6\'B7\tab}{\*\pn\pnlvlblt\pnf6\pnindent0{\pntxtb\'B7}}\fi-360\li720\sl276\slmult1\ulnone Document-oriented databases are, as oriented towards storing semi-structured document-oriented data. Most document databases are schema-less and don't validate the format of data that is stored, which makes indexing and cross-referencing data more difficult than in highly structured relational databases.\par
+{\pntext\f6\'B7\tab}Document-oriented databases are particularly well-suited to storing information about actual documents and to storing data that is an a key-value format, such as work queues.\par
+{\pntext\f6\'B7\tab}Redis and MongoDB are among the more popular document-oriented databases.\par
+
+\pard\sl276\slmult1\par
+\ul XML Databases\par
+
+\pard{\pntext\f6\'B7\tab}{\*\pn\pnlvlblt\pnf6\pnindent0{\pntxtb\'B7}}\fi-360\li720\sl276\slmult1\ulnone XML databases store information in an XML format and tend to be document-oriented.\par
+
+\pard\sl276\slmult1\par
+\ul Spatial Databases\par
+
+\pard{\pntext\f6\'B7\tab}{\*\pn\pnlvlblt\pnf6\pnindent0{\pntxtb\'B7}}\fi-360\li720\sl276\slmult1\ulnone Spatial databases are databases that are optimized to store and query data that represents objects defined in a geometric space. (Wikipedia: Spatial database)\par
+{\pntext\f6\'B7\tab}Spatial databases are particularly strong at storing data related to locations and calculating their proximity to each other.\cf1\highlight0\f1\fs22\par
+
+\pard\sl276\slmult1\par
 \cf4\highlight3\b\f0\fs24 Different kinds of Databases\cf1\highlight0\b0\f1\fs22\par
 \cf4\highlight3\b\f0\fs24\tab\tab\cf1\highlight0\b0\f1\fs22\par
 \trowd\trgaph100\trrh1\trpaddl100\trpaddr100\trpaddfl3\trpaddfr3

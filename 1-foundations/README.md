@@ -10,10 +10,3 @@
     * methods, strings, arrays, inheritance?, lambdas?
 * .NET Ecosystem - discussion
 * Design Patterns
-
-#### Other Potential Exercises
-* Cheers?
-* Mathgician
-
-#### Group Project?
-* Simple Calculator

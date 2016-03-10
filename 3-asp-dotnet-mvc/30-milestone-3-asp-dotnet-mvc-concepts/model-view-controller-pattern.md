@@ -37,7 +37,7 @@ A controller does exactly what its name implies. It serves as the hub of your ap
 Controller - (aka router) talks between the model and view. Central hub of communication. User input is what motivates the controller to do things. This is the user’s browser with input and give replies. Controller will never interact with the data store. Typically there is a controller for each large concept.
 
 
-#### What the heck are “business rules” and “business logic” in MVC?  (Per Sonda adn stackoverflow.com)
+#### What the heck are “business rules” and “business logic” in MVC?  (Per Sonda and stackoverflow.com)
 * Business rules go in the model.
 * Example:
   * Say you were displaying emails for a mailing list. The user clicks the "delete" button next to one of the emails, the controller notifies the model to delete entry N, then notifies the view the model has changed.
