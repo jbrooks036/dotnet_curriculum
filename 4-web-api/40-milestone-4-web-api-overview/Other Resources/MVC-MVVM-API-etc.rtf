@@ -1,0 +1,72 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\colortbl ;\red0\green0\blue255;}
+{\*\generator Riched20 6.3.9600}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\ul\f0\fs22\lang9 MVC vs. MVVM\ulnone\par
+{{\field{\*\fldinst{HYPERLINK http://stackoverflow.com/questions/1939403/mvvm-viewmodel-vs-mvc-viewmodel }}{\fldrslt{http://stackoverflow.com/questions/1939403/mvvm-viewmodel-vs-mvc-viewmodel\ul0\cf0}}}}\f0\fs22\par
+A rather challenging question to answer succinctly, but I'll attempt it. (Bear in mind these answer to these kinds of questions are still the subject of debate amongst developers.)\par
+In MVC, the ViewModel provides all the information necessary for a View to be rendered. The data it contains is created using data defined in the Model. The View reads the ViewModel and renders the output. Input from the View is passed to the Controller, which manipulates the Model, constructs an appropriate ViewModel, and passes this to the View for rendering.\par
+In MVVM, the ViewModel serves the same function as it does in MVC, but it also replaces part of the MVC Controller by providing commands which allow the View to manipulate the Model. WPF databinding manages the updating of the View according to changes in the ViewModel (and this effectively replaces the remaining function of the MVC Controller).\par
+answered Dec 21 '09 at 11:35\par
+Adam Ralph\par
+\par
+It's been a while since I played UI Design Patterns Bingo.. however let me take a stab at this..\par
+MVVM is just something that MS has come up with... because it helps you to get the most out of WPF. You combine the state and behavior of the view into a class (a presentation model) that is easily testable + then you use data-binding to get the data into any view.\par
+This link has a brief of the evolution of MVVM. Combine this with Fowler's "GUI Architectures" series, and you should be on your way.\par
+Update: Didn't know there was something called MVC-VM. Apparently a brainchild of the ASP.NET MVC crowd. Looks and sounds similar to MVVM (except tuned for ASP.NET MVC); the only difference is that it places a restriction that there is 1:1 mapping between VM and View. I'd have guessed 1:N, but everything else matches.\par
+edited Dec 21 '09 at 11:12\par
+answered Dec 21 '09 at 10:55\par
+Gishu\par
+\par
+{{\field{\*\fldinst{HYPERLINK http://www.rachelappel.com/comparing-the-mvc-and-mvvm-patterns-along-with-their-respective-viewmodels }}{\fldrslt{http://www.rachelappel.com/comparing-the-mvc-and-mvvm-patterns-along-with-their-respective-viewmodels\ul0\cf0}}}}\f0\fs22\par
+\b Comparing the MVC and MVVM patterns along with their respective ViewModels.\par
+\b0 Tags: ASP.NET MVC, MVC, MVVM, SilverLight, WPF, Patterns\par
+Apr 28 2011 12:58 PM\par
+It won't take long in your quest to find more information on ASP.NET MVC through internet searches, with bing.com of course, before you'll stumble across the notion of a ViewModel. Mixed within those search results are links to articles on ViewModels in Silverlight/WPF, or other technologies that also use the MVC or MVVM patterns or ViewModels, which can be quite confusing. Having said that, it's no wonder in every presentation I give concerning MVC or ViewModels, a few folks frequently ask these two, quite reasonable, questions: \par
+    "What's the difference between MVC and MVVM ?" (in general)\par
+    "What's the difference between ViewModels in MVC and ViewModels in MVVM?" \par
+The elevator pitch: MVC is a web UI pattern, and ASP.NET MVC is Microsoft's implementation of it. MVVM is Microsoft's implementation of a desktop UI pattern in WinForms, SilverLight or WPF.\par
+MVC is an old pattern, in use for decades in non-Microsoft platforms, and MVVM is a pattern similar to Martin Fowler's Presentation Model (PM) pattern, as it has taken many of its concepts from PM.\par
+It's all about the patterns\par
+Both MVC and MVVM are patterns, meaning that they are solutions to recurring design problems in software development. Patterns can show interactions between objects in various ways, as the few listed below will demonstrate:\par
+    General interactions\par
+        Interaction through inheritance and OOP principles\par
+    UI interactions\par
+        Interaction between models, views, and controllers or models, views, and ViewModels\par
+    Data access patterns\par
+        ORM mappings, Active Record pattern, POCOs in DALS\par
+Once you're aware of patterns, you can then apply them in software to make your code more stable, consistent, and maintainable. A variety of tools and frameworks exist that can easily help find the best pattern and/or implementation for your specific business problem/domain. In particular, the MVC and MVVM patterns are both UI interaction patterns with MVC being the web UI pattern and MVVM being a desktop UI pattern. You can implement either pattern in Visual Studio, and the ASP.NET MVC project template in particular guides developers to use the MVC pattern.\par
+In addition to MVC & MVVM there are many patterns that are worth reading up on.\par
+Comparing MVC and MVVM: the patterns.\par
+Since MVC and MVVM are geared towards different application paradigms altogether, i.e., ASP.NET MVC for web and MVVM desktop, they need to behave in distinctly different ways, with the most noticeable distinction being the controller from MVC... \par
+image\par
+...and the ViewModel from MVVM...\par
+image\par
+The controller in MVC accepts HTTP requests, fetches data from the model, and routes that model to the view for output. In a desktop app, there is no routing or URLs; but desktop apps still feature navigation, which is part of the UI and therefore needs to be part of a good UI pattern. ViewModels are the piece that accomplishes this task, as the ViewModel in MVVM takes the responsibility of performing, or exposing the command that house all the UI logic in addition to fetching the data and data binding.\par
+Views must behave differently as web and desktop applications use very different ways to render information for user interaction. Additionally, applications over http are considered stateless, whereas desktop applications have full connectivity over a LAN and contain and transport lots of data easily. Views in MVC only display data and perform basic client side UI duties usually with JavaScript (form submission, validation, effects, etc...). On the other hand, View in MVVM have a rich databinding and validation framework, when combined with the business logic and navigation exposed by the ViewModel, lead to a very rich User Experience\par
+Models behave the same way in either pattern - they're full of data (and sometimes logic). You may want to use other patterns at the model level for better code organization, maintenance, and a finer separation of concerns. The repository pattern with Entity Framework is a popular pattern, and Julie Lerman has a great explanation within series of posts on it.\par
+Within both MVC and MVVM exists the ViewModel. Despite the same name, there are marked differences within how ViewModels in either pattern work. \par
+Comparing MVC & MVVM: the ViewModels.\par
+There are ViewModels in MVC, but they have different responsibilities than an MVVM ViewModel.\par
+    An MVC ViewModel is two or more models combined (smashed together), or a customized subset of a model or models that provides all the information necessary to its corresponding view. It's basically a hybrid model, and the best part - the views don't know the difference.  \par
+    In MVVM, the ViewModel serves the same function as it does in MVC, but it also takes on the responsibility of a controller. \par
+This is because although they're both user interface patterns, a web application and a desktop application behave very differently, with a few key reasons below:\par
+    Navigation\par
+        As previously mentioned, navigation is completely different in both type of apps, and SilverLight/WPF applications do not use routing or URLs. \par
+    Security\par
+        Desktop applications connecting to LAN resources can happily save data locally, with security restrictions, of course. One reason is because browser based applications have no access at all to resources on the user's machine, and rightfully so, or any web site could add what they'd like to the users machine (not acceptable!). Users specifically choose to install desktop apps. When the app runs under the "Standard Users" group[1], it enjoys a wider range of UI activities than a web application will. \par
+    Model/Data Binding\par
+        Because of the stateless environment of web apps vs. the stateful environment of desktop apps, binding happens in different ways. Controllers and/or models in MVC must parse and match HTTP form elements to model properties for model binding to occur. This happens for each HTTP request, keeping in mind that the web app has no knowledge of any previous requests, even by the same user agent (browser). On the other hand, while ViewModels in MVVM apps match up the model with the view via data binding, it has no need to deal with HTTP request cycles. Networked desktop apps have built-in capacity to know what's going on between requests for data from the database. \par
+    Validation\par
+        ViewModels in both MVC and MVVM both can perform validation; however MVC 3 validation with Razor exploits unobtrusive jQuery on the client side in tandem with data annotations on the server. Alternatively, MVVM depends on data binding properties. MVC 3 also offers remote validation for dealing with the stateless nature of the web, whereas MVVM on desktop apps have immediate access to data through data binding to validate.\par
+As you can see, there's both similarities and differences between the patterns; mostly dependent on the environments - browser or OS.\par
+Summary.\par
+Since they're all in the same category, UI presentation patterns, you can use MVC on WPF, SilverLight or Winforms apps & MVVP in web applications. A note of caution: before running off swapping out patterns, be sure that what you're going to use will actually work the best for your project.\par
+By now you may be wondering where MVP pattern for ASP.NET, Winforms or WPF/SL fits in. MVP, or Model-View-Presenter, is yet another UI pattern for web or desktop development. Experiment with other patterns such as MVP to see what helps your coding efforts the most.\par
+Resources:\par
+Phil Japikse writes, talks, and mentors on patterns and testing with MVVM, WPF, & SL. Phil was also kind enough to take some time to compare the finer points of the patterns with me before posting this.\par
+WPF Apps With The Model-View-ViewModel Design Pattern.\par
+Karl Shifflett's Blog. Karl is a Program Manager at Patterns & Practices at Microsoft.\par
+[1] The "Standard Users" group contains users with very basic privileges in the Windows OS, but has more privilege than the anonymous web user (IUSR_XX or ASPNET).\par
+\par
+}
+ 

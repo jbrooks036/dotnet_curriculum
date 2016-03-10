@@ -1,0 +1,227 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Georgia;}{\f1\fnil\fcharset0 Arial;}{\f2\fnil\fcharset0 Trebuchet MS;}{\f3\fnil\fcharset0 Nova Mono;}{\f4\fnil\fcharset1 Cambria Math;}{\f5\fnil\fcharset0 Calibri;}{\f6\fnil\fcharset2 Symbol;}}
+{\colortbl ;\red0\green0\blue0;\red51\green51\blue51;\red255\green255\blue255;\red37\green37\blue37;\red0\green0\blue255;\red11\green0\blue128;}
+{\*\generator Riched20 6.3.9600}{\*\mmathPr\mmathFont4\mwrapIndent1440 }\viewkind4\uc1 
+\pard\sl276\slmult1\qc\cf1\b\f0\fs28\lang9 Sonda's NSS7 Classroom Notes on Databases \b0\f1\fs22\par
+
+\pard\sl276\slmult1\par
+
+\pard\keep\keepn\sb480\sa240\sl288\slmult0\qc\cf2\highlight3\b\f0\fs24 Introduction to Databases\cf1\highlight0\b0\f2\fs32\par
+
+\pard\sl276\slmult1\f1\fs22\par
+\par
+\highlight3\b\f0\fs24 DATABASES\highlight0\b0\f1\fs22\par
+\highlight3\f0\fs24\tab What are databases?  A type of data store.  Data store is a place we can store data.\highlight0\f1\fs22\par
+\highlight3\f0\fs24\tab Data Stores:\highlight0\f1\fs22\par
+
+\pard{\pntext\f6\'B7\tab}{\*\pn\pnlvlblt\pnf6\pnindent360{\pntxtb\'B7}}\fi-360\li940\sl276\slmult1\highlight3\f0\fs24 Databases\highlight0\par
+{\pntext\f6\'B7\tab}\highlight3 File systems\highlight0\par
+
+\pard{\pntext\f6\'B7\tab}{\*\pn\pnlvlblt\pnf6\pnindent360{\pntxtb\'B7}}\fi-360\li1660\sl276\slmult1\highlight3 File formats: jpg / png / csv / json\highlight0\par
+{\pntext\f6\'B7\tab}\highlight3 What makes file formats different?  The way it\rquote s encoded.\highlight0\par
+{\pntext\f6\'B7\tab}\highlight3 Different file formats have different ways of identifying themselves and storing stuff.  \ldblquote Shabang\rdblquote  for instance.\highlight0\par
+{\pntext\f6\'B7\tab}\highlight3 CSV stands for comma separated values.  Typically looks a lot like an excel spreadsheet.  Except each item is separated by a comma.  So\'85 Title,         Name,   SSN\highlight0\par
+
+\pard\li720\sl276\slmult1\highlight3\tab\tab professor, xavier, 123\highlight0\f1\fs22\par
+\highlight3\f0\fs24\tab\tab doctor,     whatev, 456\highlight0\f1\fs22\par
+
+\pard{\pntext\f6\'B7\tab}{\*\pn\pnlvlblt\pnf6\pnindent360{\pntxtb\'B7}}\fi-360\li940\sl276\slmult1\highlight3\f0\fs24 CD\highlight0\par
+
+\pard\sl276\slmult1\f1\fs22\par
+\highlight3\f0\fs24 We care about getting data and getting it quickly.  \highlight0\f1\fs22\par
+\highlight3\f0\fs24\tab\highlight0\f1\fs22\par
+\highlight3\f0\fs24 ACID: A set of database properties.\highlight0\f1\fs22\par
+\highlight3\i\f0\fs24 --Atomicity\i0\f3  \f4\u8594?\f3  \cf4\f0 requires that each transaction be "all or nothing": if one part of the transaction fails, the entire transaction fails, and the database state is left unchanged.\cf1\highlight0\f1\fs22\par
+\highlight3\i\f0\fs24\lang9 --Consistency\i0\f3  \f4\u8594?\f3  Everybodies data ends up on the \lquote disk\rquote  in a consistent manner.\highlight0\f1\fs22\par
+\highlight3\i\f0\fs24\lang9 --Isolation\i0\f3  \f4\u8594?\f3  Should be isolated to just what I\rquote m working on (so processes don\rquote t spill over into each other as they work on different things in the database).\highlight0\f1\fs22\par
+\highlight3\i\f0\fs24\lang9 --Durability\i0\f3  \f4\u8594?\f3  Once I put data into the database, it will still be there.\highlight0\f1\fs22\par
+\lang9\par
+\highlight3\f0\fs24 From Wikipedia\highlight0\f1\fs22\par
+\cf4\highlight3\f0\fs24 In{{\field{\*\fldinst{HYPERLINK "http://en.wikipedia.org/wiki/Computer_science"}}{\fldrslt{\ul\cf5\cf5\ul  }}}}{\cf6\f0\fs24{\field{\*\fldinst{HYPERLINK "http://en.wikipedia.org/wiki/Computer_science"}}{\fldrslt{\ul\cf5\cf5\ul computer science}}}}\cf4\ulnone\f0\fs24 , ACID ({\cf6\i{\field{\*\fldinst{HYPERLINK "http://en.wikipedia.org/wiki/Atomicity_(database_systems)"}}{\fldrslt{\ul\cf5\cf5\ul Atomicity}}}}\i\f0\fs24 ,{{\field{\*\fldinst{HYPERLINK "http://en.wikipedia.org/wiki/Consistency_(database_systems)"}}{\fldrslt{\ul\cf5\cf5\ul  }}}}{\cf6\f0\fs24{\field{\*\fldinst{HYPERLINK "http://en.wikipedia.org/wiki/Consistency_(database_systems)"}}{\fldrslt{\ul\cf5\cf5\ul Consistency}}}}\cf4\ulnone\f0\fs24 ,{{\field{\*\fldinst{HYPERLINK "http://en.wikipedia.org/wiki/Isolation_(database_systems)"}}{\fldrslt{\ul\cf5\cf5\ul  }}}}{\cf6\f0\fs24{\field{\*\fldinst{HYPERLINK "http://en.wikipedia.org/wiki/Isolation_(database_systems)"}}{\fldrslt{\ul\cf5\cf5\ul Isolation}}}}\cf4\ulnone\f0\fs24 ,{{\field{\*\fldinst{HYPERLINK "http://en.wikipedia.org/wiki/Durability_(database_systems)"}}{\fldrslt{\ul\cf5\cf5\ul  }}}}{\cf6\f0\fs24{\field{\*\fldinst{HYPERLINK "http://en.wikipedia.org/wiki/Durability_(database_systems)"}}{\fldrslt{\ul\cf5\cf5\ul Durability}}}}\cf4\ulnone\i0\f0\fs24 ) is a set of properties that guarantee that{{\field{\*\fldinst{HYPERLINK "http://en.wikipedia.org/wiki/Database_transaction"}}{\fldrslt{\ul\cf5\cf5\ul  }}}}{\cf6\f0\fs24{\field{\*\fldinst{HYPERLINK "http://en.wikipedia.org/wiki/Database_transaction"}}{\fldrslt{\ul\cf5\cf5\ul database transactions}}}}\cf4\ulnone\f0\fs24  are processed reliably. In the context of {\cf6{\field{\*\fldinst{HYPERLINK "http://en.wikipedia.org/wiki/Database"}}{\fldrslt{\ul\cf5\cf5\ul databases}}}}\f0\fs24 , a single logical operation on the data is called a transaction. For example, a transfer of funds from one bank account to another, even involving multiple changes such as debiting one account and crediting another, is a single transaction.\cf1\highlight0\f1\fs22\par
+\par
+\cf4\highlight3\f0\fs24 Different databases treat different parts of ACID with various levels of respect.\par
+\par
+\b What are the types of databases?\par
+\b0\par
+
+\pard{\pntext\f6\'B7\tab}{\*\pn\pnlvlblt\pnf6\pnindent0{\pntxtb\'B7}}\fi-360\li720\sl276\slmult1 In this class, we will be focusing on relational databases. However, there are many different types of databases that are suited to different specialized purposes.\par
+{\pntext\f6\'B7\tab}There is no "perfect" database type. Different datasets demand different ways of storing and accessing that data. Many database management systems combine the properties of various types of databases. For example, PostgreSQL is primarily a relational database system, however it can act as document-oriented database, spatial database, and distributed database as needed.\par
+
+\pard\sl276\slmult1\par
+\ul Relational Databases\par
+
+\pard{\pntext\f6\'B7\tab}{\*\pn\pnlvlblt\pnf6\pnindent0{\pntxtb\'B7}}\fi-360\li720\sl276\slmult1\ulnone Relational databases are databases that are based on the relational model, in which all data is stored in tuples (ordered lists of elements) and relations.\par
+{\pntext\f6\'B7\tab}Relational database data is stored in tables with specific schemas (specifications of exactly what kind of data is stored) and relationships (between tables). Relational databases are particularly strong at storing and querying highly structured data that have rich relationships.\par
+{\pntext\f6\'B7\tab}Microsoft SQL Server, MySQL, Oracle and PostgreSQL are among the more famous relational database systems.\par
+
+\pard\sl276\slmult1\par
+\ul Object & Object-Relational Databases\par
+
+\pard{\pntext\f6\'B7\tab}{\*\pn\pnlvlblt\pnf6\pnindent0{\pntxtb\'B7}}\fi-360\li720\sl276\slmult1\ulnone Object databases store data in the form of serialized Objects, rather than relational (table-oriented) data. Object-Relational databases take a hybrid approach. They are oriented towards storing objects and program state from object-oriented languages.\par
+
+\pard\sl276\slmult1\par
+\ul Graph Databases\par
+
+\pard{\pntext\f6\'B7\tab}{\*\pn\pnlvlblt\pnf6\pnindent0{\pntxtb\'B7}}\fi-360\li720\sl276\slmult1\ulnone Graph databases are databases that store data based on graph data structures. They are particularly suited to storing graph-oriented data, such as computer networks and social network connections.\par
+
+\pard\sl276\slmult1\par
+\ul Document-oriented Databases\par
+
+\pard{\pntext\f6\'B7\tab}{\*\pn\pnlvlblt\pnf6\pnindent0{\pntxtb\'B7}}\fi-360\li720\sl276\slmult1\ulnone Document-oriented databases are, as oriented towards storing semi-structured document-oriented data. Most document databases are schema-less and don't validate the format of data that is stored, which makes indexing and cross-referencing data more difficult than in highly structured relational databases.\par
+{\pntext\f6\'B7\tab}Document-oriented databases are particularly well-suited to storing information about actual documents and to storing data that is an a key-value format, such as work queues.\par
+{\pntext\f6\'B7\tab}Redis and MongoDB are among the more popular document-oriented databases.\par
+
+\pard\sl276\slmult1\par
+\ul XML Databases\par
+
+\pard{\pntext\f6\'B7\tab}{\*\pn\pnlvlblt\pnf6\pnindent0{\pntxtb\'B7}}\fi-360\li720\sl276\slmult1\ulnone XML databases store information in an XML format and tend to be document-oriented.\par
+
+\pard\sl276\slmult1\par
+\ul Spatial Databases\par
+
+\pard{\pntext\f6\'B7\tab}{\*\pn\pnlvlblt\pnf6\pnindent0{\pntxtb\'B7}}\fi-360\li720\sl276\slmult1\ulnone Spatial databases are databases that are optimized to store and query data that represents objects defined in a geometric space. (Wikipedia: Spatial database)\par
+{\pntext\f6\'B7\tab}Spatial databases are particularly strong at storing data related to locations and calculating their proximity to each other.\cf1\highlight0\f1\fs22\par
+
+\pard\sl276\slmult1\par
+\cf4\highlight3\b\f0\fs24 Different kinds of Databases\cf1\highlight0\b0\f1\fs22\par
+\cf4\highlight3\b\f0\fs24\tab\tab\cf1\highlight0\b0\f1\fs22\par
+\trowd\trgaph100\trrh1\trpaddl100\trpaddr100\trpaddfl3\trpaddfr3
+\clcfpat1\clcbpat3\clbrdrl\brdrw12\brdrs\brdrcf1\clbrdrt\brdrw12\brdrs\brdrcf1\clbrdrr\brdrw12\brdrs\brdrcf1\clbrdrb\brdrw12\brdrs\brdrcf1 \cellx3000\clcfpat1\clcbpat3\clbrdrl\brdrw12\brdrs\brdrcf1\clbrdrt\brdrw12\brdrs\brdrcf1\clbrdrr\brdrw12\brdrs\brdrcf1\clbrdrb\brdrw12\brdrs\brdrcf1 \cellx5280\clcfpat1\clcbpat3\clbrdrl\brdrw12\brdrs\brdrcf1\clbrdrt\brdrw12\brdrs\brdrcf1\clbrdrr\brdrw12\brdrs\brdrcf1\clbrdrb\brdrw12\brdrs\brdrcf1 \cellx7245\clcfpat1\clcbpat3\clbrdrl\brdrw12\brdrs\brdrcf1\clbrdrt\brdrw12\brdrs\brdrcf1\clbrdrr\brdrw12\brdrs\brdrcf1\clbrdrb\brdrw12\brdrs\brdrcf1 \cellx9345 
+\pard\intbl\sl240\slmult1\qc\cf4\highlight3\b\f0\fs24 NAME\cf0\highlight0\b0\f5\fs22\cell\cf4\highlight3\b\f0\fs24 PRO\cf0\highlight0\b0\f5\fs22\cell\cf4\highlight3\b\f0\fs24 CON\cf0\highlight0\b0\f5\fs22\cell\cf4\highlight3\b\f0\fs24 OTHER NOTES\cf0\highlight0\b0\f5\fs22\cell\row\trowd\trgaph100\trrh1\trpaddl100\trpaddr100\trpaddfl3\trpaddfr3
+\clcfpat1\clcbpat3\clbrdrl\brdrw12\brdrs\brdrcf1\clbrdrt\brdrw12\brdrs\brdrcf1\clbrdrr\brdrw12\brdrs\brdrcf1\clbrdrb\brdrw12\brdrs\brdrcf1 \cellx3000\clcfpat1\clcbpat3\clbrdrl\brdrw12\brdrs\brdrcf1\clbrdrt\brdrw12\brdrs\brdrcf1\clbrdrr\brdrw12\brdrs\brdrcf1\clbrdrb\brdrw12\brdrs\brdrcf1 \cellx5280\clcfpat1\clcbpat3\clbrdrl\brdrw12\brdrs\brdrcf1\clbrdrt\brdrw12\brdrs\brdrcf1\clbrdrr\brdrw12\brdrs\brdrcf1\clbrdrb\brdrw12\brdrs\brdrcf1 \cellx7245\clcfpat1\clcbpat3\clbrdrl\brdrw12\brdrs\brdrcf1\clbrdrt\brdrw12\brdrs\brdrcf1\clbrdrr\brdrw12\brdrs\brdrcf1\clbrdrb\brdrw12\brdrs\brdrcf1 \cellx9345 
+\pard\intbl\sl240\slmult1\qc\cf4\highlight3\b\f0\fs24 Excel Spreadsheet\cf1\highlight0\b0\f1\fs22\par
+\cf4\highlight3\b\f0\fs24 (not a real database, but a data store)\cf0\highlight0\b0\f5\fs22\cell\cf4\highlight3\b\f0\fs24 Accessible\cf0\highlight0\b0\f5\fs22\cell\cf4\highlight3\b\f0\fs24 Inconsistent\cf0\highlight0\b0\f5\fs22\cell 
+\pard\intbl\sl276\slmult1\cell\row\trowd\trgaph100\trrh1\trpaddl100\trpaddr100\trpaddfl3\trpaddfr3
+\clcfpat1\clcbpat3\clbrdrl\brdrw12\brdrs\brdrcf1\clbrdrt\brdrw12\brdrs\brdrcf1\clbrdrr\brdrw12\brdrs\brdrcf1\clbrdrb\brdrw12\brdrs\brdrcf1 \cellx3000\clcfpat1\clcbpat3\clbrdrl\brdrw12\brdrs\brdrcf1\clbrdrt\brdrw12\brdrs\brdrcf1\clbrdrr\brdrw12\brdrs\brdrcf1\clbrdrb\brdrw12\brdrs\brdrcf1 \cellx5280\clcfpat1\clcbpat3\clbrdrl\brdrw12\brdrs\brdrcf1\clbrdrt\brdrw12\brdrs\brdrcf1\clbrdrr\brdrw12\brdrs\brdrcf1\clbrdrb\brdrw12\brdrs\brdrcf1 \cellx7245\clcfpat1\clcbpat3\clbrdrl\brdrw12\brdrs\brdrcf1\clbrdrt\brdrw12\brdrs\brdrcf1\clbrdrr\brdrw12\brdrs\brdrcf1\clbrdrb\brdrw12\brdrs\brdrcf1 \cellx9345 
+\pard\intbl\sl240\slmult1\qc\cf4\highlight3\b\f0\fs24 CSV\cf0\highlight0\b0\f5\fs22\cell 
+\pard\intbl\sl276\slmult1\cell 
+\pard\intbl\sl240\slmult1\qc\cf4\highlight3\b\strike\f0\fs24 ACID\cf1\highlight0\b0\strike0\f1\fs22\par
+\cf4\highlight3\b\f0\fs24 Really primitive format\cf0\highlight0\b0\f5\fs22\cell 
+\pard\intbl\sl276\slmult1\cell\row\trowd\trgaph100\trrh1\trpaddl100\trpaddr100\trpaddfl3\trpaddfr3
+\clcfpat1\clcbpat3\clbrdrl\brdrw12\brdrs\brdrcf1\clbrdrt\brdrw12\brdrs\brdrcf1\clbrdrr\brdrw12\brdrs\brdrcf1\clbrdrb\brdrw12\brdrs\brdrcf1 \cellx3000\clcfpat1\clcbpat3\clbrdrl\brdrw12\brdrs\brdrcf1\clbrdrt\brdrw12\brdrs\brdrcf1\clbrdrr\brdrw12\brdrs\brdrcf1\clbrdrb\brdrw12\brdrs\brdrcf1 \cellx5280\clcfpat1\clcbpat3\clbrdrl\brdrw12\brdrs\brdrcf1\clbrdrt\brdrw12\brdrs\brdrcf1\clbrdrr\brdrw12\brdrs\brdrcf1\clbrdrb\brdrw12\brdrs\brdrcf1 \cellx7245\clcfpat1\clcbpat3\clbrdrl\brdrw12\brdrs\brdrcf1\clbrdrt\brdrw12\brdrs\brdrcf1\clbrdrr\brdrw12\brdrs\brdrcf1\clbrdrb\brdrw12\brdrs\brdrcf1 \cellx9345 
+\pard\intbl\sl240\slmult1\qc\cf4\highlight3\b\f0\fs24 MySQL\cf0\highlight0\b0\f5\fs22\cell\cf4\highlight3\b\f0\fs24 ACID\cf0\highlight0\b0\f5\fs22\cell 
+\pard\intbl\sl276\slmult1\cell 
+\pard\intbl\sl240\slmult1\qc\cf4\highlight3\b\f0\fs24 Relational Database\cf0\highlight0\b0\f5\fs22\cell\row\trowd\trgaph100\trrh1\trpaddl100\trpaddr100\trpaddfl3\trpaddfr3
+\clcfpat1\clcbpat3\clbrdrl\brdrw12\brdrs\brdrcf1\clbrdrt\brdrw12\brdrs\brdrcf1\clbrdrr\brdrw12\brdrs\brdrcf1\clbrdrb\brdrw12\brdrs\brdrcf1 \cellx3000\clcfpat1\clcbpat3\clbrdrl\brdrw12\brdrs\brdrcf1\clbrdrt\brdrw12\brdrs\brdrcf1\clbrdrr\brdrw12\brdrs\brdrcf1\clbrdrb\brdrw12\brdrs\brdrcf1 \cellx5280\clcfpat1\clcbpat3\clbrdrl\brdrw12\brdrs\brdrcf1\clbrdrt\brdrw12\brdrs\brdrcf1\clbrdrr\brdrw12\brdrs\brdrcf1\clbrdrb\brdrw12\brdrs\brdrcf1 \cellx7245\clcfpat1\clcbpat3\clbrdrl\brdrw12\brdrs\brdrcf1\clbrdrt\brdrw12\brdrs\brdrcf1\clbrdrr\brdrw12\brdrs\brdrcf1\clbrdrb\brdrw12\brdrs\brdrcf1 \cellx9345 
+\pard\intbl\sl240\slmult1\qc\cf4\highlight3\b\f0\fs24 Cassandra\cf0\highlight0\b0\f5\fs22\cell\cf4\highlight3\b\f0\fs24 Fast\cf0\highlight0\b0\f5\fs22\cell\cf4\highlight3\b\f0\fs24 No promise of durability\cf0\highlight0\b0\f5\fs22\cell 
+\pard\intbl\sl276\slmult1\cell\row\trowd\trgaph100\trrh1\trpaddl100\trpaddr100\trpaddfl3\trpaddfr3
+\clcfpat1\clcbpat3\clbrdrl\brdrw12\brdrs\brdrcf1\clbrdrt\brdrw12\brdrs\brdrcf1\clbrdrr\brdrw12\brdrs\brdrcf1\clbrdrb\brdrw12\brdrs\brdrcf1 \cellx3000\clcfpat1\clcbpat3\clbrdrl\brdrw12\brdrs\brdrcf1\clbrdrt\brdrw12\brdrs\brdrcf1\clbrdrr\brdrw12\brdrs\brdrcf1\clbrdrb\brdrw12\brdrs\brdrcf1 \cellx5280\clcfpat1\clcbpat3\clbrdrl\brdrw12\brdrs\brdrcf1\clbrdrt\brdrw12\brdrs\brdrcf1\clbrdrr\brdrw12\brdrs\brdrcf1\clbrdrb\brdrw12\brdrs\brdrcf1 \cellx7245\clcfpat1\clcbpat3\clbrdrl\brdrw12\brdrs\brdrcf1\clbrdrt\brdrw12\brdrs\brdrcf1\clbrdrr\brdrw12\brdrs\brdrcf1\clbrdrb\brdrw12\brdrs\brdrcf1 \cellx9345 
+\pard\intbl\sl240\slmult1\qc\cf4\highlight3\b\f0\fs24 Postgres\cf0\highlight0\b0\f5\fs22\cell\cf4\highlight3\b\f0\fs24 Full durability\cf0\highlight0\b0\f5\fs22\cell\cf4\highlight3\b\f0\fs24 Sacrifices Speed\cf0\highlight0\b0\f5\fs22\cell\cf4\highlight3\b\f0\fs24 Relational Database\cf0\highlight0\b0\f5\fs22\cell\row\trowd\trgaph100\trrh1\trpaddl100\trpaddr100\trpaddfl3\trpaddfr3
+\clcfpat1\clcbpat3\clbrdrl\brdrw12\brdrs\brdrcf1\clbrdrt\brdrw12\brdrs\brdrcf1\clbrdrr\brdrw12\brdrs\brdrcf1\clbrdrb\brdrw12\brdrs\brdrcf1 \cellx3000\clcfpat1\clcbpat3\clbrdrl\brdrw12\brdrs\brdrcf1\clbrdrt\brdrw12\brdrs\brdrcf1\clbrdrr\brdrw12\brdrs\brdrcf1\clbrdrb\brdrw12\brdrs\brdrcf1 \cellx5280\clcfpat1\clcbpat3\clbrdrl\brdrw12\brdrs\brdrcf1\clbrdrt\brdrw12\brdrs\brdrcf1\clbrdrr\brdrw12\brdrs\brdrcf1\clbrdrb\brdrw12\brdrs\brdrcf1 \cellx7245\clcfpat1\clcbpat3\clbrdrl\brdrw12\brdrs\brdrcf1\clbrdrt\brdrw12\brdrs\brdrcf1\clbrdrr\brdrw12\brdrs\brdrcf1\clbrdrb\brdrw12\brdrs\brdrcf1 \cellx9345 
+\pard\intbl\sl240\slmult1\qc\cf4\highlight3\b\f0\fs24 MS SQL Server\cf0\highlight0\b0\f5\fs22\cell 
+\pard\intbl\sl276\slmult1\cell\cell 
+\pard\intbl\sl240\slmult1\qc\cf4\highlight3\b\f0\fs24 Relational Database\cf0\highlight0\b0\f5\fs22\cell\row\trowd\trgaph100\trrh1\trpaddl100\trpaddr100\trpaddfl3\trpaddfr3
+\clcfpat1\clcbpat3\clbrdrl\brdrw12\brdrs\brdrcf1\clbrdrt\brdrw12\brdrs\brdrcf1\clbrdrr\brdrw12\brdrs\brdrcf1\clbrdrb\brdrw12\brdrs\brdrcf1 \cellx3000\clcfpat1\clcbpat3\clbrdrl\brdrw12\brdrs\brdrcf1\clbrdrt\brdrw12\brdrs\brdrcf1\clbrdrr\brdrw12\brdrs\brdrcf1\clbrdrb\brdrw12\brdrs\brdrcf1 \cellx5280\clcfpat1\clcbpat3\clbrdrl\brdrw12\brdrs\brdrcf1\clbrdrt\brdrw12\brdrs\brdrcf1\clbrdrr\brdrw12\brdrs\brdrcf1\clbrdrb\brdrw12\brdrs\brdrcf1 \cellx7245\clcfpat1\clcbpat3\clbrdrl\brdrw12\brdrs\brdrcf1\clbrdrt\brdrw12\brdrs\brdrcf1\clbrdrr\brdrw12\brdrs\brdrcf1\clbrdrb\brdrw12\brdrs\brdrcf1 \cellx9345 
+\pard\intbl\sl240\slmult1\qc\cf4\highlight3\b\f0\fs24 Mongo\cf0\highlight0\b0\f5\fs22\cell 
+\pard\intbl\sl276\slmult1\cell\cell 
+\pard\intbl\sl240\slmult1\qc\cf4\highlight3\b\f4\fs24\u8594?\f3  Storage similar to json\cf1\highlight0\b0\f1\fs22\par
+\cf4\highlight3\b\f4\fs24\u8594?\f3  Document oriented\cf0\highlight0\b0\f5\fs22\lang9\cell\row\trowd\trgaph100\trrh1\trpaddl100\trpaddr100\trpaddfl3\trpaddfr3
+\clcfpat1\clcbpat3\clbrdrl\brdrw12\brdrs\brdrcf1\clbrdrt\brdrw12\brdrs\brdrcf1\clbrdrr\brdrw12\brdrs\brdrcf1\clbrdrb\brdrw12\brdrs\brdrcf1 \cellx3000\clcfpat1\clcbpat3\clbrdrl\brdrw12\brdrs\brdrcf1\clbrdrt\brdrw12\brdrs\brdrcf1\clbrdrr\brdrw12\brdrs\brdrcf1\clbrdrb\brdrw12\brdrs\brdrcf1 \cellx5280\clcfpat1\clcbpat3\clbrdrl\brdrw12\brdrs\brdrcf1\clbrdrt\brdrw12\brdrs\brdrcf1\clbrdrr\brdrw12\brdrs\brdrcf1\clbrdrb\brdrw12\brdrs\brdrcf1 \cellx7245\clcfpat1\clcbpat3\clbrdrl\brdrw12\brdrs\brdrcf1\clbrdrt\brdrw12\brdrs\brdrcf1\clbrdrr\brdrw12\brdrs\brdrcf1\clbrdrb\brdrw12\brdrs\brdrcf1 \cellx9345 
+\pard\intbl\sl240\slmult1\qc\cf4\highlight3\b\f0\fs24 Sqlite\cf0\highlight0\b0\f5\fs22\cell 
+\pard\intbl\sl276\slmult1\cell\cell\cell\row\trowd\trgaph100\trrh1\trpaddl100\trpaddr100\trpaddfl3\trpaddfr3
+\clcfpat1\clcbpat3\clbrdrl\brdrw12\brdrs\brdrcf1\clbrdrt\brdrw12\brdrs\brdrcf1\clbrdrr\brdrw12\brdrs\brdrcf1\clbrdrb\brdrw12\brdrs\brdrcf1 \cellx3000\clcfpat1\clcbpat3\clbrdrl\brdrw12\brdrs\brdrcf1\clbrdrt\brdrw12\brdrs\brdrcf1\clbrdrr\brdrw12\brdrs\brdrcf1\clbrdrb\brdrw12\brdrs\brdrcf1 \cellx5280\clcfpat1\clcbpat3\clbrdrl\brdrw12\brdrs\brdrcf1\clbrdrt\brdrw12\brdrs\brdrcf1\clbrdrr\brdrw12\brdrs\brdrcf1\clbrdrb\brdrw12\brdrs\brdrcf1 \cellx7245\clcfpat1\clcbpat3\clbrdrl\brdrw12\brdrs\brdrcf1\clbrdrt\brdrw12\brdrs\brdrcf1\clbrdrr\brdrw12\brdrs\brdrcf1\clbrdrb\brdrw12\brdrs\brdrcf1 \cellx9345 
+\pard\intbl\sl240\slmult1\qc\cf4\highlight3\b\f0\fs24 SQL\cf0\highlight0\b0\f5\fs22\cell\cf4\highlight3\b\f0\fs24 Structured Query Language\cf1\highlight0\b0\f1\fs22\par
+\cf4\highlight3\b\f0\fs24 (NOT A DATABASE)\cf0\highlight0\b0\f5\fs22\cell 
+\pard\intbl\sl276\slmult1\cell\cell\row 
+\pard\sl276\slmult1\cf1\f1\par
+\cf4\highlight3\f0\fs24 Database Tradeoffs\cf1\highlight0\f1\fs22\par
+\cf4\highlight3\f3\fs24\tab\f4\u8594?\f3  How ACIDic?\cf1\highlight0\f1\fs22\par
+\cf4\highlight3\f3\fs24\lang9\tab\f4\u8594?\f3  How fast?\cf1\highlight0\f1\fs22\par
+\cf4\highlight3\f3\fs24\lang9\tab\f4\u8594?\f3  What kind of data?\cf1\highlight0\f1\fs22\par
+\cf4\highlight3\f3\fs24\lang9\tab\f4\u8594?\f3  What kind of durability?\cf1\highlight0\f1\fs22\par
+\lang9\par
+\cf4\highlight3\b\f0\fs24\par
+\cf1\highlight0\b0\f1\fs22\par
+\b\f0 Import SQLite File:\b0\f1\par
+\f0 -download sqlite task manager\f1\par
+\f0 -save the northwind database on your computer\f1\par
+\f0 -open sqlite task manager\f1\par
+\f0 -create a database by giving it a name and saving it\f1\par
+\f0 -press import button to import northwind file as an sql\f1\par
+\f0 -you should have 13 tables\f1\par
+\par
+\b\f0 DATABASES!!!\b0\f1\par
+\f0 a database is structured collection of data (all day, err day Jurnell promises). Examples are lists, files (CSV, XML, etc), keyboards (because each key maps to a value) because you can sort it and put it into structure.\f1\par
+\f0 Databases are differentiated by how it\rquote s organized. \f1\par
+\f0\tab Relational\f1\par
+\f0\tab Document - MongoDB. JSON\f1\par
+\f0\tab Columnar - \f1\par
+\f0\tab Graph - Neo4J, social graph Facebook has, \f1\par
+\f0\tab\f1\par
+\f0 In a database, cardinality is the number of rows and arity is the number of columns.\f1\par
+\par
+\f0 Tools to help model:\f1\par
+\f0 attributes - they have to be independent of one another. They have orthogonality. Because sets are inherently unique, their attributes must be unique.\f1\par
+\f0 the domain - \cf4\highlight3  all the values which a {\cf6{\field{\*\fldinst{HYPERLINK "https://en.wikipedia.org/wiki/Data_element"}}{\fldrslt{\ul\cf5\cf5\ul data element}}}}\f0\fs22  may contain\cf1\highlight0\f1\par
+\f0 range - the output of function\f1\par
+\par
+\f0 Model Relationships\f1\par
+\f0 one to one - an author can have only one SSN. Each SSN only goes with one author. It\rquote s a unique identifier that makes a unique pairing.\f1\par
+\f0 one to many - a published work can have only one citation style. a citation style can be used with many published works. It\rquote s a instance to category.\f1\par
+\f0 many to many - an author can have multiple books. A book can have many authors.\f1\par
+\par
+\f0 There is concept/entity vs. instance/example \f1\par
+\par
+\f0 Composition - if you take away a piece of an element, then it\rquote s still that thing.\f1\par
+\f0 Aggregation - if you take away a pieces of an element ceases to be that element. \f1\par
+\par
+\par
+### Outline of Databases Topics (per Eliza?)\par
+*\tab Intro to Databases\par
+*\tab ACID\par
+*\tab Entity-Relation Diagrams\par
+*\tab Intro to SQL\par
+*\tab Creating Databases\par
+*\tab Table definitions\par
+*\tab Constraints\par
+*\tab Indexing\par
+*\tab Transactions\par
+*\tab Locks\par
+*\tab Normalization\par
+*\tab Joins\par
+*\tab Projects\par
+*\tab Overview of:\par
+ \tab  * Sprocs\par
+ \tab  * Views\par
+\tab  * Query Optimization\par
+\b\f0\fs24 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\par
+\fs28\par
+\fs24 Indexing a Database:\b0\f1\fs22\par
+\f0\fs24 -One way sort a database is that you know which column in bytes that place you want is, so you skip the byte columns it is, and read a bit. And you repeat that over and over until you get all instances of a certain item. For example, if your trying to look up last name for Smith, the database knows that it\rquote s at the 18th byte of a row, and goes to it to check and repeats. Not the fastest, but a lot better than going through the whole table byte by byte.\f1\fs22\par
+\f0\fs24 -For indexing, you create a giant hash with a list inside of all the rows that meet a certain criteria. For example, an index can have a section called A telling us that it\rquote s row is between like 2 to 10. So when we look up Arthur, it goes to the index and then goes to the rows. This is a very simple index since it only tells you the first letter, not if it has A in the name. \f1\fs22\par
+\f0\fs24 -Databases actually use binary trees. A lot of people have spent bunches of time and money to make databases quickly sortable so you should let the database structure do it as opposed to making a sorting yourself.\f1\fs22\par
+\f0\fs24 -There is a cost. When you add something, you have to index it so you can get it back rapidly. So, adding something will become slower since you will have to index it, or sometimes you just want to add it quickly so you don\rquote t index it right off.\f1\fs22\par
+\par
+\b\f0\fs24 Constraints\b0\f1\fs22\par
+\f0\fs24 -Rules that you make about your data. So when you make a column and specify of varchar of 12, that means you made a constraint that it will be either number or letters and up to 12 things.\f1\fs22\par
+\f0\fs24 -Required means it cannot be blank or null. So required varchar 12 means it means letters and numbers that are between 1 and 12.\f1\fs22\par
+\par
+\b\f0\fs24 Keys in Database:\b0\f1\fs22\par
+\f0\fs24 -Primary key is a unique identifier. Sometimes people want a compound primary key that spans two columns: first name | last name | birthday. Compound keys are much slower but people do it because they\rquote re \ldblquote schmucks\rdblquote .\f1\fs22\par
+\f0\fs24 -Foreign key represents the primary key in another table. At the same time you\rquote re setting an index on them using this key and sometimes the database for you.\f1\fs22\par
+\par
+\b\f0\fs24 Normalization:\b0\f1\fs22\par
+\f0\fs24 -Don\rquote t put the same thing in two places\f1\fs22\par
+\f0\fs24 -Don\rquote t duplicate data because if you want one record change, you will have to change it in all places.\f1\fs22\par
+\par
+\par
+\par
+
+\pard\sl252\slmult0\f0\par
+\par
+
+\pard\sl276\slmult1\f1\par
+\f0\fs24 view - a combination of tables that group together data.\f1\fs22\par
+\f0\fs24\par
+functions - take input and give output without changing global state. \par
+\par
+procedures - are a set of things to do and don\rquote t have input and outputs where you can store the code as data. It\rquote s not a real good idea/practice to store procedures because there is no way of tracking it since it doesn\rquote t have inputs and outputs.\f1\fs22\par
+\f0\fs24\par
+-mutations are changes that are made onto a database done by code. Then it will have a migration history.\f1\fs22\par
+\par
+\f0\fs24\par
+
+\pard\sl252\slmult0\f1\fs22\par
+
+\pard\sl276\slmult1\par
+}
+ 
