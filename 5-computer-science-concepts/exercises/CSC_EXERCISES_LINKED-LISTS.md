@@ -1,6 +1,10 @@
 # Linked Lists Exercise
-* https://github.com/elizabrock/CSharpSinglyLinkedLists
 
+* Practice C# coding while also learning LinkedList data structure.  
+
+* Has accompanying visualization window which supports visualizing what code execution is actually doing with the structures (cool!)
+
+* https://github.com/elizabrock/CSharpSinglyLinkedLists
 
 1. Fork and clone the repository.
 2. In Visual Studio, at Team Explorer > Click the Plug icon “Connect to Team Projects” >
