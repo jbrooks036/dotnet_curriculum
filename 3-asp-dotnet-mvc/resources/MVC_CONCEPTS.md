@@ -1,4 +1,4 @@
-# Model View Controller Pattern (MVC)
+# Model View Controller (MVC) Concepts
 
 ## Overview
 MVC, which stands for Model, View, Controller, is an architecture pattern for organizing software applications.  Each component manages a specific purpose, and serves to make your code more organized and modular.  In addition to defining the three components, MVC describes the actual relationship between the components.
