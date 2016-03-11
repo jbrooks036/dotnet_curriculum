@@ -24,3 +24,8 @@
 
 * Retrieving an individual assignment of that user could be:
   * (GET) students/43/assignments/2   
+
+#### Resources  
+* https://msdn.microsoft.com/en-us/library/system.web.http.routeattribute%28v=vs.118%29.aspx
+
+* https://msdn.microsoft.com/en-us/library/system.web.http.routeprefixattribute%28v=vs.118%29.aspx

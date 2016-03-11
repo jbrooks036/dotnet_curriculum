@@ -1,9 +1,5 @@
-## Milestone 4:  Building a RESTful Web API
-#### Topics (to be fleshed out over time)
-* Web API
-* Routing
+# REST / HTTP
 
-#####
 * With APIs, clients (e.g. a browser or phone app) make AJAX requests to a URI to interact with data. This is most naturally implemented by a server side application returning HTTP responses containing JSON. This is different from a traditional MVC-style process in two ways:
   * The client is only requesting data and not an entire view/HTML page
   * The server only exposes data, usually in the form of JSON (could be XML)
@@ -39,9 +35,11 @@
   	RunwayController → Connects to the Runway model (which talks to the DB)
   	PlaneController  → Connects to the Plane model (which talks to the DB)
 
+### WebAPI Resources
 
-#### Exercises
-* ???
+##### ApiController
+* https://msdn.microsoft.com/en-us/library/system.web.http.apicontroller%28v=vs.118%29.aspx
 
-#### Group Project
-???
+##### Online Tutorial
+Building a Web App with ASP.NET 5, MVC 6, EF7, and AngularJS
+https://app.pluralsight.com/library/courses/aspdotnet-5-ef7-bootstrap-angular-web-app/table-of-contents
