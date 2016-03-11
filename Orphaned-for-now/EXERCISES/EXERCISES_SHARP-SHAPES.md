@@ -1,5 +1,7 @@
 # Sharp Shapes Exercise (per Eliza)
 
+* 90s desktop screen w/ WPF; and it’s also a good learning exercise about classes
+
 * https://github.com/elizabrock/SharpShapes
 
 * Shapes:

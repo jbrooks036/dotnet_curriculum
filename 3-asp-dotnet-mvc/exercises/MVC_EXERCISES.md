@@ -1,4 +1,4 @@
-## Milestone 3 - MVC - Assignment / Exercise
+## Milestone 3 - MVC - Assignments / Exercise
 
 ### Reading Assignment
 *  HTTP Protocol 1.1 RFC 2616 [HTTP 1.1] -> https://tools.ietf.org/html/rfc2616

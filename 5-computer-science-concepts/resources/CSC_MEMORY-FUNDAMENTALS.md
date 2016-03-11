@@ -1,4 +1,6 @@
-# Garbage Collectors (per Sonda's notes)
+# Memory Fundamentals
+
+### Garbage Collectors (per Sonda's notes)
 
 * part of language that cleans up any objects that aren’t being used to make the program more efficient and frees up memory.
 

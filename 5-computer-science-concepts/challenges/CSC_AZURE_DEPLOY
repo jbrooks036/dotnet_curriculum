@@ -1,0 +1,10 @@
+# Azure Challenge
+
+#### This is from Sonda's notes
+
+### Azure Deployment
+
+#### TODO PRIOR TO DEPLOYMENT
+* All your code committed
+* Working migrations (be careful just deleting migrations, in fact, don’t do it.  What you need to do is write a new migration that deletes what the migration you want to remove did)
+* File/Image Uploads - default thing to do is store it on the machine that’s running (in a pictures folder let’s say).  Can’t do that anymore.  We will go through all these steps when the time comes (Jurnell currently sick).

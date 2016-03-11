@@ -33,13 +33,6 @@
 #### Accessibility
 * `WAI-ARIA` Library - **USE IT!!**
 
-#### AngularJS [?? these notes need special help!!]
-* In Solution Explorer, click on main project > NuGet PkgMgr > Add angularjs
-* Put assets for Angular inside `_ProjectNameLayout`
-* Add script tag
-* Add script bundle
-* [??] app.js
-
 
 ## Tests [from Sonda's Notes]
 
@@ -68,10 +61,12 @@ http://www.teststack.net/
   3. You need to initialize the boilerplate by adding  [ClassInitialize] with a method inside to find the file path of the test, launch it, and connect it to the MainWindow’s title.
   4. Now you can write your tests
   5. You also need a  [TestMethod]
-          ``public void ExecuteStoryTest()
+```
+          public void ExecuteStoryTest()
           {
               this.BDDfy();
-          }``
+          }
+```
   so that the BDDfy will run in the file that is going through your user stories.
 
 * After all the tests there is a [ClassCleanup] that is a method that wipes the project issues from memory back to its original settings and to also close the application
