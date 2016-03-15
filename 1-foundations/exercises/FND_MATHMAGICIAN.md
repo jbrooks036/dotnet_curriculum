@@ -1,4 +1,7 @@
-# Assignments / Exercises
+# Mathgician Exercise
+
+Simple fun exercise to develop C# CLI app, w/ input/output
+* https://github.com/elizabrock/mathgician
 
 ## Mathgician Exercise [from Sonda's notes]
 Completed code is @: https://github.com/elizabrock/mathgician
