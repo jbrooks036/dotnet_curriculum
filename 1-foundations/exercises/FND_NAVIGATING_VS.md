@@ -26,10 +26,10 @@
   * how to add necessary ones via Intellisense in codebase
 
 ### NUGet Package Manager
-
+* . . . PM
 
 ### Debugging
 ##### Breakpoints
 ##### Start With or Without Debugging
 ##### Stepping through Breakpoints
- 
+##### Locals and CallStack windows (How to show them if not already visible!)
