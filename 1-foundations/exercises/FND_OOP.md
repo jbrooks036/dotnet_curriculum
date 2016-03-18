@@ -12,3 +12,11 @@ Basics included:
  - methods for calculating circumference, area of each shape
 
 Details, including implementation notes from Sonda, are in "Orphaned-for-Now" section, EXERCISES folder.
+
+### Dog OOP exercise
+Another perhaps simpler exercise involves various dog objects. That include inheritable differences such as:
+ - size / weight
+ - bark (woof vs. yip)
+ - owner
+ - species
+ - name
