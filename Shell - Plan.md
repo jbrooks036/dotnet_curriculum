@@ -16,7 +16,7 @@ Using the shell for a variety of exercises would also help prepare students for 
 * M1 (Working with VS)- Debugging in Visual Studio - clicking on "Run" normally brings up a webpage view. Would be good for students to learn where VS debugging stops and browser inspector debugging starts, before they tackle MVC per se.
 * M2 (Databases) - User Management (Authorization / Authentication) - this topic normally relies upon a front end (Register/Login page) to work w/ dotnet framework.
 
-##### Exercises that would strongly benefit from a Webpage front-end
+##### Exercises that would provide an introduction to MVC
 * M3 (MVC) - an elementary M3 exercise could have students pull down a specific object model (template) class, that they then have to write Controllers and Views for.
 
 ## Implementation Details
